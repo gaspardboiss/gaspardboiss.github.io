@@ -289,31 +289,61 @@
 </style>
 
 <!-- Script JavaScript corrigé -->
+<!-- Script JavaScript corrigé -->
 <script>
     function openModal() {
         document.getElementById('modal').style.display = 'flex';
     }
+
     function closeModal() {
         document.getElementById('modal').style.display = 'none';
         document.getElementById('gallery').style.display = 'grid';
         document.getElementById('large-image').style.display = 'none';
     }
+
     function showLarge(src) {
         document.getElementById('large-img').src = src;
         document.getElementById('gallery').style.display = 'none';
         document.getElementById('large-image').style.display = 'block';
     }
+
     function backToGallery() {
         document.getElementById('large-image').style.display = 'none';
         document.getElementById('gallery').style.display = 'grid';
     }
+
     // Fermer la modale en cliquant en dehors
     window.onclick = function(event) {
         if (event.target == document.getElementById('modal')) {
             closeModal();
         }
+        if (event.target == document.getElementById('modal2')) {
+            closeModal2();
+        }
     };
 
+    /* ---------- DEUXIÈME GALERIE ---------- */
+
+    function openModal2() {
+        document.getElementById('modal2').style.display = 'flex';
+    }
+
+    function closeModal2() {
+        document.getElementById('modal2').style.display = 'none';
+        document.getElementById('gallery2').style.display = 'grid';
+        document.getElementById('large-image2').style.display = 'none';
+    }
+
+    function showLarge2(src) {
+        document.getElementById('large-img2').src = src;
+        document.getElementById('gallery2').style.display = 'none';
+        document.getElementById('large-image2').style.display = 'block';
+    }
+
+    function backToGallery2() {
+        document.getElementById('large-image2').style.display = 'none';
+        document.getElementById('gallery2').style.display = 'grid';
+    }
 </script>
 					<!-- Footer -->
 						<footer>
@@ -400,6 +430,7 @@
 </body>
 
 </html>
+
 
 
 
