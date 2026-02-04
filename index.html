@@ -90,7 +90,9 @@
 									<h2><span class="date">Capturer la vie en monochrome rajoute un ésthétisme inégalé</span>
 									</a></h2>
 								</header>
-								<a href="#" class="image fit"><img src="images/rose.png" alt="" /></a>
+								<a href="#" class="image fit" onclick="openModal(); return false;">
+									<img src="images/rose.png" alt="" />
+								</a>
 								<p></p>
 								<ul class="actions special">
 									<li><a href="#" class="button">Full Story</a></li>
@@ -164,19 +166,21 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <div id="gallery" class="gallery">
-            <!-- Grille de vignettes avec fade-in -->
-            <div class="thumbnail fade-in" onclick="showLarge('images/pic01.jpg')"><img src="images/pic01.jpg" alt="Photo 1"></div>
-            <div class="thumbnail fade-in" onclick="showLarge('images/pic02.jpg')"><img src="images/pic02.jpg" alt="Photo 2"></div>
-            <div class="thumbnail fade-in" onclick="showLarge('images/pic03.jpg')"><img src="images/pic03.jpg" alt="Photo 3"></div>
-            <div class="thumbnail fade-in" onclick="showLarge('images/pic04.jpg')"><img src="images/pic04.jpg" alt="Photo 4"></div>
-            <div class="thumbnail fade-in" onclick="showLarge('images/pic05.jpg')"><img src="images/pic05.jpg" alt="Photo 5"></div>
-            <div class="thumbnail fade-in" onclick="showLarge('images/pic06.jpg')"><img src="images/pic06.jpg" alt="Photo 6"></div>
-            <div class="thumbnail fade-in" onclick="showLarge('images/pic07.jpg')"><img src="images/pic07.jpg" alt="Photo 7"></div>
-            <!-- Ajoutez plus de vignettes ici si nécessaire -->
-        </div>
+    <div class="thumbnail fade-in" onclick="showLarge('images/image1.jpg')">
+        <img src="images/image1.jpg" alt="Photo 1">
+    </div>
+
+    <div class="thumbnail fade-in" onclick="showLarge('images/image2.jpg')">
+        <img src="images/image2.jpg" alt="Photo 2">
+    </div>
+
+    <div class="thumbnail fade-in" onclick="showLarge('images/image3.jpg')">
+        <img src="images/image3.jpg" alt="Photo 3">
+    </div>
+</div>
         <div id="large-image" class="large-image" style="display: none;">
             <img id="large-img" src="" alt="Grande image">
-            <button onclick="backToGallery()">Retour à la galerie</button>
+            <button style="margin-top:15px;" onclick="backToGallery()">Revenir à la galerie</button>
         </div>
     </div>
 </div>
@@ -363,6 +367,7 @@
 </body>
 
 </html>
+
 
 
 
