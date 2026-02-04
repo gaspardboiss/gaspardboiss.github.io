@@ -104,7 +104,9 @@
 									<h2><a href="#">Prises de vues<br />
 									drones</a></h2>
 								</header>
-								<a href="#" class="image fit"><img src="images/hiver2.jpg" alt="" /></a>
+								<a href="#" class="image fit" onclick="openModal2(); return false;">
+									<img src="images/hiver2.jpg" alt="" />
+								</a>
 								<p></p>
 								<ul class="actions special">
 									<li><a href="#" class="button">Full Story</a></li>
@@ -166,21 +168,29 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <div id="gallery" class="gallery">
-    <div class="thumbnail fade-in" onclick="showLarge('images/image1.jpg')">
+    <div class="thumbnail fade-in" onclick="showLarge('images/rose.png')">
         <img src="images/image1.jpg" alt="Photo 1">
     </div>
 
-    <div class="thumbnail fade-in" onclick="showLarge('images/image2.jpg')">
+    <div class="thumbnail fade-in" onclick="showLarge('images/rose.png')">
         <img src="images/image2.jpg" alt="Photo 2">
     </div>
 
-    <div class="thumbnail fade-in" onclick="showLarge('images/image3.jpg')">
+    <div class="thumbnail fade-in" onclick="showLarge('images/rose.png')">
         <img src="images/image3.jpg" alt="Photo 3">
     </div>
 </div>
         <div id="large-image" class="large-image" style="display: none;">
             <img id="large-img" src="" alt="Grande image">
             <button style="margin-top:15px;" onclick="backToGallery()">Revenir à la galerie</button>
+        </div>
+    </div>
+</div>
+
+
+        <div id="large-image2" class="large-image" style="display:none;">
+            <img id="large-img2">
+            <button onclick="backToGallery2()">Revenir à la galerie</button>
         </div>
     </div>
 </div>
@@ -256,6 +266,23 @@
         .gallery { grid-template-columns: repeat(2, 1fr); }
     }
 </style>
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal2()">&times;</span>
+
+        <div id="gallery2" class="gallery">
+            <div class="thumbnail fade-in" onclick="showLarge2('images/rose.png')">
+                <img src="images/image1.jpg">
+            </div>
+            <div class="thumbnail fade-in" onclick="showLarge2('images/rose.png')">
+                <img src="images/image2.jpg">
+            </div>
+            <div class="thumbnail fade-in" onclick="showLarge2('images/rose.png')">
+                <img src="images/image3.jpg">
+            </div>
+        </div>
+
 <!-- Script JavaScript corrigé -->
 <script>
     function openModal() {
@@ -281,6 +308,30 @@
             closeModal();
         }
     };
+	
+function openModal2() {
+    document.getElementById('modal2').style.display = 'flex';
+}
+
+function closeModal2() {
+    document.getElementById('modal2').style.display = 'none';
+    document.getElementById('gallery2').style.display = 'grid';
+    document.getElementById('large-image2').style.display = 'none';
+}
+
+function showLarge2(src) {
+    document.getElementById('large-img2').src = src;
+    document.getElementById('gallery2').style.display = 'none';
+    document.getElementById('large-image2').style.display = 'block';
+}
+
+function backToGallery2() {
+    document.getElementById('large-image2').style.display = 'none';
+    document.getElementById('gallery2').style.display = 'grid';
+}
+
+
+
 </script>
 					<!-- Footer -->
 						<footer>
@@ -367,6 +418,7 @@
 </body>
 
 </html>
+
 
 
 
