@@ -76,7 +76,7 @@
 								</a></h2>
 								<p>texte</p>
 							</header>
-							<a href="#" class="image main" onclick="openModal2(); return false; style="text-align: center;"><img src="images/portraitgasp.png" alt="" style="width: 50%; height: auto; display: block; margin: 0 auto;" /></a>
+							<a href="#" class="image main" style="text-align: center;" onclick="openModal2(); return false;"><img src="images/portraitgasp.png" alt="" style="width: 50%; height: auto; display: block; margin: 0 auto;" /></a>
 							<ul class="actions special">
 								<li><a href="#" class="button large">Full Story</a></li>
 							</ul>
@@ -86,7 +86,7 @@
 						<section class="posts">
 							<article>
 								<header>
-									<h2><a href="#">noir & blanc<br /></h2>	</a>
+									<h2><a href="#">noir & blanc<br /></a></h2>
 									<span class="date">Capturer la vie en monochrome rajoute une esthétique inégalée</span>
 								
 								</header>
@@ -257,7 +257,7 @@
 
 <div id="large-image3" class="large-image" style="display:none;">
      <img id="large-img3">
-         <button onclick="backToGallery2()">Revenir à la galerie</button>
+         <button onclick="backToGallery3()">Revenir à la galerie</button>
         </div>
     </div>
 </div>
@@ -408,7 +408,7 @@
     function showLarge3(src) {
         document.getElementById('large-img3').src = src;
         document.getElementById('gallery3').style.display = 'none';
-        document.getElementById('large-image2').style.display = 'block';
+        document.getElementById('large-image3').style.display = 'block';
     }
 
     function backToGallery3() {
@@ -501,6 +501,7 @@
 </body>
 
 </html>
+
 
 
 
