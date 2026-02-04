@@ -157,6 +157,127 @@
 									</ul>
 								</article>
 							</section>
+						<!-- Modale pour la galerie -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="gallery" class="gallery">
+            <!-- Grille de vignettes avec fade-in -->
+            <div class="thumbnail fade-in" onclick="showLarge('images/pic01.jpg')"><img src="images/pic01.jpg" alt="Photo 1"></div>
+            <div class="thumbnail fade-in" onclick="showLarge('images/pic02.jpg')"><img src="images/pic02.jpg" alt="Photo 2"></div>
+            <div class="thumbnail fade-in" onclick="showLarge('images/pic03.jpg')"><img src="images/pic03.jpg" alt="Photo 3"></div>
+            <div class="thumbnail fade-in" onclick="showLarge('images/pic04.jpg')"><img src="images/pic04.jpg" alt="Photo 4"></div>
+            <div class="thumbnail fade-in" onclick="showLarge('images/pic05.jpg')"><img src="images/pic05.jpg" alt="Photo 5"></div>
+            <div class="thumbnail fade-in" onclick="showLarge('images/pic06.jpg')"><img src="images/pic06.jpg" alt="Photo 6"></div>
+            <div class="thumbnail fade-in" onclick="showLarge('images/pic07.jpg')"><img src="images/pic07.jpg" alt="Photo 7"></div>
+            <!-- Ajoutez plus de vignettes ici si nécessaire -->
+        </div>
+        <div id="large-image" class="large-image" style="display: none;">
+            <img id="large-img" src="" alt="Grande image">
+            <button onclick="backToGallery()">Retour à la galerie</button>
+        </div>
+    </div>
+</div>
+
+<!-- Styles pour la modale -->
+<style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 90%;
+        max-height: 90%;
+        overflow-y: auto;
+        position: relative;
+    }
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .close:hover { color: #000; }
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .thumbnail {
+        cursor: pointer;
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+    }
+    .thumbnail:nth-child(1) { animation-delay: 0.1s; }
+    .thumbnail:nth-child(2) { animation-delay: 0.2s; }
+    .thumbnail:nth-child(3) { animation-delay: 0.3s; }
+    .thumbnail:nth-child(4) { animation-delay: 0.4s; }
+    .thumbnail:nth-child(5) { animation-delay: 0.5s; }
+    .thumbnail:nth-child(6) { animation-delay: 0.6s; }
+    .thumbnail:nth-child(7) { animation-delay: 0.7s; }
+    /* Ajoutez des délais pour plus d'images */
+    .thumbnail img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+    .large-image {
+        text-align: center;
+    }
+    .large-image img {
+        max-width: 100%;
+        max-height: 80vh;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+        .gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+</style>
+
+<!-- Script JavaScript -->
+<script>
+    function openModal() {
+        document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+        document.getElementById('gallery').style.display = 'grid';
+        document.getElementById('large-image').style.display = 'none';
+    }
+    function showLarge(src) {
+        document.getElementById('large-img').src = src;
+        document.getElementById('gallery').style.display = 'none';
+        document.getElementById('large-image').style.display = 'block';
+    }
+    function backToGallery() {
+        document.getElementById('large-image').style.display = 'none';
+        document.getElementById('gallery').style.display = 'grid';
+    }
+    // Fermer la modale en cliquant en dehors
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('modal')) {
+            closeModal();
+        }
+    };
+</script>
 
 						<!-- Footer -->
 							<footer>
@@ -243,6 +364,7 @@
 	</body>
 
 </html>
+
 
 
 
