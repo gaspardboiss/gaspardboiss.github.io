@@ -284,6 +284,41 @@
     </div>
 </div>
 
+<div id="modal4" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal4()">&times;</span>
+		<div id="gallery4" class="gallery">
+    <div class="thumbnail fade-in" onclick="showLarge4('images/hiver2.jpg')">
+        <img src="images/hiver2.jpg">
+    </div>
+			
+    <div class="thumbnail fade-in" onclick="showLarge4('images/hiver1.jpg')">
+        <img src="images/hiver1.jpg">
+    </div>
+			
+    <div class="thumbnail fade-in" onclick="showLarge4('images/hiver3.jpg')">
+        <img src="images/hiver3.jpg">
+    </div>
+
+	   <div class="thumbnail fade-in" onclick="showLarge4('images/hiver4.jpg')">
+        <img src="images/hiver4.jpg">
+    </div>
+
+	<div class="thumbnail fade-in" onclick="showLarge4('images/hiver5.jpg')">
+        <img src="images/hiver5.jpg">
+    </div>
+			
+	<div class="thumbnail fade-in" onclick="showLarge4('images/hiver6.jpg')">
+        <img src="images/hiver6.jpg">
+    </div>
+</div>
+
+<div id="large-image4" class="large-image" style="display:none;">
+     <img id="large-img4">
+         <button onclick="backToGallery4()">Revenir à la galerie</button>
+        </div>
+    </div>
+</div>
 
 <!-- Styles pour la modale (inchangés, mais assurez-vous qu'ils sont dans <head> ou ici) -->
 <style>
@@ -393,6 +428,9 @@
 		if (event.target == document.getElementById('modal3')) {
         closeModal3();
         }
+		if (event.target == document.getElementById('modal4')) {
+        closeModal4();
+        }
     };
 
     /* ---------- DEUXIÈME GALERIE ---------- */
@@ -440,6 +478,29 @@
     function backToGallery3() {
         document.getElementById('large-image3').style.display = 'none';
         document.getElementById('gallery3').style.display = 'grid';
+    }
+
+    /* ---------- TROISIEME GALERIE ---------- */
+
+    function openModal4() {
+        document.getElementById('modal4').style.display = 'flex';
+    }
+
+    function closeModal4() {
+        document.getElementById('modal4').style.display = 'none';
+        document.getElementById('gallery4').style.display = 'grid';
+        document.getElementById('large-image4').style.display = 'none';
+    }
+
+    function showLarge4(src) {
+        document.getElementById('large-img4').src = src;
+        document.getElementById('gallery4').style.display = 'none';
+        document.getElementById('large-image4').style.display = 'block';
+    }
+
+    function backToGallery4() {
+        document.getElementById('large-image4').style.display = 'none';
+        document.getElementById('gallery4').style.display = 'grid';
     }
 </script>
 					<!-- Footer -->
@@ -527,6 +588,7 @@
 </body>
 
 </html>
+
 
 
 
