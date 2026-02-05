@@ -126,19 +126,19 @@
 							<article>
 								<header>
 									<h2><a href="#">Pose Longue<br /></a></h2>
-									
 								</header>
-								<a href="#" class="image fit"><img src="images/flou9.jpg" alt="" /></a>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+								<a href="#" class="image fit" onclick="openModal5(); return false;">
+									<img src="images/flou9.jpg" alt="" />
+								</a>
+								<p></p>
 								<ul class="actions special">
-									<li><a href="#" class="button">Voir</a></li>
+									<li><a href="#" class="button" onclick="openModal5(); return false;">Voir</a></li>
 								</ul>
 							</article>
+							
 							<article>
 								<header>
-									<span class="date">April 11, 2017</span>
-									<h2><a href="#">Odio magna<br />
-									sed consectetur</a></h2>
+									<h2><a href="#">courts-métrages<br /></a></h2>
 								</header>
 								<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
 								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
@@ -342,6 +342,48 @@
     </div>
 </div>
 
+<div id="modal5" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal5()">&times;</span>
+		<div id="gallery5" class="gallery">
+    <div class="thumbnail fade-in" onclick="showLarge5('images/flou1.jpg')">
+        <img src="images/flou1.jpg">
+    </div>
+			
+    <div class="thumbnail fade-in" onclick="showLarge5('images/archi5.jpg')">
+        <img src="images/archi5.jpg">
+    </div>
+			
+    <div class="thumbnail fade-in" onclick="showLarge5('images/chateau1.jpg')">
+        <img src="images/chateau1.jpg">
+    </div>
+
+	   <div class="thumbnail fade-in" onclick="showLarge5('images/chateau2.jpg')">
+        <img src="images/chateau2.jpg">
+    </div>
+
+	<div class="thumbnail fade-in" onclick="showLarge5('images/archi4.jpg')">
+        <img src="images/archi4.jpg">
+    </div>
+			
+	<div class="thumbnail fade-in" onclick="showLarge5('images/archi3.jpg')">
+        <img src="images/archi3.jpg">
+    </div>
+	<div class="thumbnail fade-in" onclick="showLarge4('images/archi2.jpg')">
+        <img src="images/archi2.jpg">
+    </div>
+<div class="thumbnail fade-in" onclick="showLarge4('images/batiment1.jpg')">
+        <img src="images/batiment1.jpg">
+    </div>
+</div>
+
+<div id="large-image5" class="large-image" style="display:none;">
+     <img id="large-img4">
+         <button onclick="backToGallery5()">Revenir à la galerie</button>
+        </div>
+    </div>
+</div>
+
 <!-- Styles pour la modale (inchangés, mais assurez-vous qu'ils sont dans <head> ou ici) -->
 <style>
     .modal {
@@ -454,6 +496,9 @@
 		if (event.target == document.getElementById('modal4')) {
         closeModal4();
         }
+		if (event.target == document.getElementById('modal5')) {
+        closeModal5();
+        }
     };
 
     /* ---------- DEUXIÈME GALERIE ---------- */
@@ -503,7 +548,7 @@
         document.getElementById('gallery3').style.display = 'grid';
     }
 
-    /* ---------- TROISIEME GALERIE ---------- */
+    /* ---------- QUATRIEME GALERIE ---------- */
 
     function openModal4() {
         document.getElementById('modal4').style.display = 'flex';
@@ -524,6 +569,29 @@
     function backToGallery4() {
         document.getElementById('large-image4').style.display = 'none';
         document.getElementById('gallery4').style.display = 'grid';
+    }
+
+ /* ---------- CINQUIEME GALERIE ---------- */
+
+    function openModal5() {
+        document.getElementById('modal5').style.display = 'flex';
+    }
+
+    function closeModal5() {
+        document.getElementById('modal5').style.display = 'none';
+        document.getElementById('gallery5').style.display = 'grid';
+        document.getElementById('large-image5').style.display = 'none';
+    }
+
+    function showLarge5(src) {
+        document.getElementById('large-img5').src = src;
+        document.getElementById('gallery5').style.display = 'none';
+        document.getElementById('large-image5').style.display = 'block';
+    }
+
+    function backToGallery5() {
+        document.getElementById('large-image5').style.display = 'none';
+        document.getElementById('gallery5').style.display = 'grid';
     }
 </script>
 					<!-- Footer -->
@@ -611,6 +679,7 @@
 </body>
 
 </html>
+
 
 
 
