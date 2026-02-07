@@ -566,13 +566,23 @@
     .thumbnail:nth-child(17) { animation-delay: 1.18s; }
     .thumbnail:nth-child(18) { animation-delay: 1.2s; }
     /* Ajoutez des délais pour plus d'images */
-    .large-image {
-        text-align: center;
-    }
-    .large-image img {
-        max-width: 100%;
-        max-height: 80vh;
-    }
+.large-image {
+    display: flex;
+    flex-direction: column; /* empile verticalement */
+    align-items: center;    /* centre horizontalement */
+    justify-content: flex-start; /* commence en haut */
+    text-align: center;
+    gap: 15px; /* espace entre image et bouton */
+}
+.large-image img {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block; /* pour éviter tout comportement inline */
+}
+
+.large-image button {
+    margin-top: 0; /* le gap gère l'espace maintenant */
+}
 .modal-separator {
   display: flex;
   align-items: center;
@@ -872,6 +882,7 @@ window.addEventListener('click', function(e) {
 </body>
 
 </html>
+
 
 
 
