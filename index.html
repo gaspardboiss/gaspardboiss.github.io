@@ -623,11 +623,10 @@
         document.getElementById('gallery').style.display = 'none';
         document.getElementById('large-image').style.display = 'block';
     }
-
-    function backToGallery() {
-        document.getElementById('large-image').style.display = 'none';
-        document.getElementById('gallery'). 
-    }
+	function backToGallery() {
+		document.getElementById('large-image').style.display = 'none';
+		document.getElementById('gallery').style.display = 'block';
+	}
     // Fermer la modale en cliquant en dehors
     window.onclick = function(event) {
         if (event.target == document.getElementById('modal')) {
@@ -865,6 +864,7 @@ window.addEventListener('click', function(e) {
 </body>
 
 </html>
+
 
 
 
