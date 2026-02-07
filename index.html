@@ -509,7 +509,7 @@
     }
 .close {
     position: absolute;
-    top: 3px;
+    top: 1px;
     right: 10px;
     color: #aaa;
     font-size: 36px;
@@ -572,16 +572,20 @@
     align-items: center;    /* centre horizontalement */
     justify-content: flex-start; /* commence en haut */
     text-align: center;
-    gap: 15px; /* espace entre image et bouton */
+    gap: 20px; /* espace entre image et bouton */
 }
 .large-image img {
     max-width: 100%;
     max-height: 80vh;
-    display: block; /* pour éviter tout comportement inline */
+    display: block; 
+	margin-bottom: 0;/* pour éviter tout comportement inline */
 }
 
 .large-image button {
-    margin-top: 0; /* le gap gère l'espace maintenant */
+    margin-top: 0; 
+	padding: 10px 20px; /* pour un peu plus de confort visuel */
+    font-size: 16px;
+    cursor: pointer;/* le gap gère l'espace maintenant */
 }
 .modal-separator {
   display: flex;
@@ -882,6 +886,7 @@ window.addEventListener('click', function(e) {
 </body>
 
 </html>
+
 
 
 
