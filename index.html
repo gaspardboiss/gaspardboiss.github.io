@@ -553,6 +553,28 @@
 		.gallery {
 			grid-template-columns: repeat(2, 1fr);
     }
+.modal-separator {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+  opacity: 0.7;
+}
+
+.modal-separator::before,
+.modal-separator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+}
+
+.modal-separator span {
+  padding: 0 15px;
+  font-size: 0.9em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #fff;
+}
 </style>
 
 <!-- Script JavaScript corrigé -->
@@ -702,7 +724,11 @@ function closeModalVideos() {
 }
 
 function showVideo(url) {
+
+  // cacher la galerie (miniatures + séparateur)
   document.getElementById('galleryVideos').style.display = 'none';
+
+  // afficher la vidéo
   document.getElementById('large-video').style.display = 'block';
 
   // autoplay activé
@@ -710,8 +736,14 @@ function showVideo(url) {
 }
 
 function backToGalleryVideos() {
+
+  // arrêter la vidéo
   document.getElementById('videoPlayer').src = '';
+
+  // cacher la vidéo
   document.getElementById('large-video').style.display = 'none';
+
+  // réafficher la galerie
   document.getElementById('galleryVideos').style.display = 'grid';
 }
 
@@ -808,6 +840,7 @@ window.addEventListener('click', function(e) {
 </body>
 
 </html>
+
 
 
 
