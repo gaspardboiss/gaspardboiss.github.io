@@ -463,12 +463,13 @@
 	<div id="galleryVideosLycee" class="gallery">
 
  <div class="thumbnail fade-in"
-       onclick="showVideo('https://www.youtube.com/embed/838EboJXgMQ')">
+       onclick="showVideo('https://www.youtube.com/embed/838EboJXgMQ', 'Synopsis : Ici on explique le projet, l\'idée, etc.')">
     <img src="https://img.youtube.com/vi/838EboJXgMQ/hqdefault.jpg">
   </div>
 </div>
     <!-- Vidéo en grand -->
     <div id="large-video" class="large-image" style="display:none;">
+		
 <iframe id="videoPlayer"
         width="100%"
         height="500"
@@ -477,7 +478,7 @@
         allow="autoplay; fullscreen"
         allowfullscreen>
 </iframe>
-
+<p id="videoDescription" style="margin-top:10px; color:#fff; max-width:800px; text-align:center;"></p>
       <button style="margin-top:15px;" onclick="backToGalleryVideos()">
         Revenir à la galerie
       </button>
@@ -776,7 +777,10 @@ function showVideo(url) {
 
   // afficher la vidéo
   document.getElementById('large-video').style.display = 'block';
-  document.getElementById('videoPlayer').src = url + '?autoplay=1&rel=0'; // <-- ici ok
+  document.getElementById('videoPlayer').src = url + '?autoplay=1&rel=0';
+
+  // ajouter le texte
+  document.getElementById('videoDescription').innerText = description;
 }
 
 function backToGalleryVideos() {
@@ -882,6 +886,7 @@ window.addEventListener('click', function(e) {
 </body>
 
 </html>
+
 
 
 
