@@ -567,7 +567,6 @@
   height: 1px;
   background: rgba(255,255,255,0.3);
 }
-
 .modal-separator span {
   padding: 0 15px;
   font-size: 0.9em;
@@ -724,29 +723,28 @@ function closeModalVideos() {
 }
 
 function showVideo(url) {
-
-  // cacher la galerie (miniatures + séparateur)
+  // cacher toutes les miniatures et le séparateur
   document.getElementById('galleryVideos').style.display = 'none';
+  document.getElementById('galleryVideosLycee').style.display = 'none';
+  document.querySelector('.modal-separator').style.display = 'none';
 
   // afficher la vidéo
   document.getElementById('large-video').style.display = 'block';
-
+  document.getElementById('videoPlayer').src = url + '?autoplay=1&rel=0';
+}
   // autoplay activé
   document.getElementById('videoPlayer').src = url + '?autoplay=1&rel=0';
 }
 
 function backToGalleryVideos() {
-
-  // arrêter la vidéo
   document.getElementById('videoPlayer').src = '';
-
-  // cacher la vidéo
   document.getElementById('large-video').style.display = 'none';
 
-  // réafficher la galerie
+  // réafficher miniatures et séparateur
   document.getElementById('galleryVideos').style.display = 'grid';
+  document.getElementById('galleryVideosLycee').style.display = 'grid';
+  document.querySelector('.modal-separator').style.display = 'flex';
 }
-
 // clic en dehors = fermer
 window.addEventListener('click', function(e) {
   if (e.target === document.getElementById('modalVideos')) {
@@ -840,6 +838,7 @@ window.addEventListener('click', function(e) {
 </body>
 
 </html>
+
 
 
 
