@@ -730,10 +730,7 @@ function showVideo(url) {
 
   // afficher la vidéo
   document.getElementById('large-video').style.display = 'block';
-  document.getElementById('videoPlayer').src = url + '?autoplay=1&rel=0';
-}
-  // autoplay activé
-  document.getElementById('videoPlayer').src = url + '?autoplay=1&rel=0';
+  document.getElementById('videoPlayer').src = url + '?autoplay=1&rel=0'; // <-- ici ok
 }
 
 function backToGalleryVideos() {
@@ -745,6 +742,7 @@ function backToGalleryVideos() {
   document.getElementById('galleryVideosLycee').style.display = 'grid';
   document.querySelector('.modal-separator').style.display = 'flex';
 }
+
 // clic en dehors = fermer
 window.addEventListener('click', function(e) {
   if (e.target === document.getElementById('modalVideos')) {
@@ -838,6 +836,7 @@ window.addEventListener('click', function(e) {
 </body>
 
 </html>
+
 
 
 
