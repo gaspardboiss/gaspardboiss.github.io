@@ -493,13 +493,15 @@
   <div class="modal-content">
     <span class="close" onclick="closeModalVideos2()">&times;</span>
 
-    <!-- ===== MONTAGE DRONE ===== -->
-<div class="modal-separator">
-	<div id="galleryVideos2" class="gallery">
-	<div class="thumbnail fade-in"
+  <div id="galleryVideos2Main" class="gallery">
+      <div class="thumbnail fade-in"
            onclick="showVideo2('https://www.youtube.com/embed/dMNVtVzXCAg')">
         <img src="https://img.youtube.com/vi/dMNVtVzXCAg/hqdefault.jpg">
       </div>
+    </div>
+
+    <!-- ===== MONTAGE DRONE ===== -->
+<div class="modal-separator">
   <span>Montages drone</span>
 </div>
     <div id="galleryVideos2Drone" class="gallery">
@@ -874,6 +876,7 @@ function closeModalVideos2() {
 }
 
 function showVideo2(url) {
+  document.getElementById('galleryVideos2Main').style.display = 'none';
   document.getElementById('galleryVideos2Drone').style.display = 'none';
   document.getElementById('galleryVideos2Game').style.display = 'none';
   document.querySelectorAll('#modalVideos2 .modal-separator').forEach(el => el.style.display = 'none');
@@ -886,6 +889,7 @@ function backToGalleryVideos2() {
   document.getElementById('videoPlayer2').src = '';
   document.getElementById('large-video2').style.display = 'none';
 
+  document.getElementById('galleryVideos2Main').style.display = 'block';
   document.getElementById('galleryVideos2Drone').style.display = 'block';
   document.getElementById('galleryVideos2Game').style.display = 'block';
   document.querySelectorAll('#modalVideos2 .modal-separator').forEach(el => el.style.display = 'flex');
@@ -983,6 +987,7 @@ window.addEventListener('click', function(e) {
 </body>
 
 </html>
+
 
 
 
