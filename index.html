@@ -493,18 +493,37 @@
   <div class="modal-content">
     <span class="close" onclick="closeModalVideos2()">&times;</span>
 
-    <div id="galleryVideos2" class="gallery">
+    <!-- ===== MONTAGE DRONE ===== -->
+    <div id="galleryVideos2Drone" class="gallery">
       <div class="thumbnail fade-in"
            onclick="showVideo2('https://www.youtube.com/embed/1khe2eo4Kbc')">
         <img src="https://img.youtube.com/vi/1khe2eo4Kbc/hqdefault.jpg">
       </div>
 
       <div class="thumbnail fade-in"
-           onclick="showVideo2('https://www.youtube.com/embed/Z0JBgfGNSEo')">
-        <img src="https://img.youtube.com/vi/Z0JBgfGNSEo/hqdefault.jpg">
+           onclick="showVideo2('https://www.youtube.com/embed/N5z96sImUpc')">
+        <img src="https://img.youtube.com/vi/N5z96sImUpc/hqdefault.jpg">
       </div>
     </div>
 
+    <div class="modal-separator">
+      <span>Montage jeux vidéo</span>
+    </div>
+
+    <!-- ===== MONTAGE JEUX VIDÉO ===== -->
+    <div id="galleryVideos2Game" class="gallery">
+      <div class="thumbnail fade-in"
+           onclick="showVideo2('https://www.youtube.com/embed/Z0JBgfGNSEo')">
+        <img src="https://img.youtube.com/vi/Z0JBgfGNSEo/hqdefault.jpg">
+      </div>
+
+      <div class="thumbnail fade-in"
+           onclick="showVideo2('https://www.youtube.com/embed/ID_JEU_2')">
+        <img src="https://img.youtube.com/vi/ID_JEU_2/hqdefault.jpg">
+      </div>
+    </div>
+
+    <!-- ===== VIDÉO EN GRAND ===== -->
     <div id="large-video2" class="large-image" style="display:none;">
       <iframe id="videoPlayer2"
               width="100%"
@@ -516,6 +535,7 @@
 
       <button onclick="backToGalleryVideos2()">Revenir à la galerie</button>
     </div>
+
   </div>
 </div>
 <!-- Styles pour la modale (inchangés, mais assurez-vous qu'ils sont dans <head> ou ici) -->
@@ -842,7 +862,10 @@ function closeModalVideos2() {
 }
 
 function showVideo2(url) {
-  document.getElementById('galleryVideos2').style.display = 'none';
+  document.getElementById('galleryVideos2Drone').style.display = 'none';
+  document.getElementById('galleryVideos2Game').style.display = 'none';
+  document.querySelector('#modalVideos2 .modal-separator').style.display = 'none';
+
   document.getElementById('large-video2').style.display = 'block';
   document.getElementById('videoPlayer2').src = url + '?autoplay=1&rel=0';
 }
@@ -850,7 +873,10 @@ function showVideo2(url) {
 function backToGalleryVideos2() {
   document.getElementById('videoPlayer2').src = '';
   document.getElementById('large-video2').style.display = 'none';
-  document.getElementById('galleryVideos2').style.display = 'block';
+
+  document.getElementById('galleryVideos2Drone').style.display = 'block';
+  document.getElementById('galleryVideos2Game').style.display = 'block';
+  document.querySelector('#modalVideos2 .modal-separator').style.display = 'flex';
 }
 
 // clic en dehors = fermer
@@ -945,6 +971,7 @@ window.addEventListener('click', function(e) {
 </body>
 
 </html>
+
 
 
 
