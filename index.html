@@ -494,6 +494,9 @@
     <span class="close" onclick="closeModalVideos2()">&times;</span>
 
     <!-- ===== MONTAGE DRONE ===== -->
+<div class="modal-separator">
+  <span>Montage jeux vidéo</span>
+</div>
     <div id="galleryVideos2Drone" class="gallery">
       <div class="thumbnail fade-in"
            onclick="showVideo2('https://www.youtube.com/embed/1khe2eo4Kbc')">
@@ -864,7 +867,7 @@ function closeModalVideos2() {
 function showVideo2(url) {
   document.getElementById('galleryVideos2Drone').style.display = 'none';
   document.getElementById('galleryVideos2Game').style.display = 'none';
-  document.querySelector('#modalVideos2 .modal-separator').style.display = 'none';
+  document.querySelectorAll('#modalVideos2 .modal-separator').forEach(el => el.style.display = 'none');
 
   document.getElementById('large-video2').style.display = 'block';
   document.getElementById('videoPlayer2').src = url + '?autoplay=1&rel=0';
@@ -876,7 +879,7 @@ function backToGalleryVideos2() {
 
   document.getElementById('galleryVideos2Drone').style.display = 'block';
   document.getElementById('galleryVideos2Game').style.display = 'block';
-  document.querySelector('#modalVideos2 .modal-separator').style.display = 'flex';
+  document.querySelectorAll('#modalVideos2 .modal-separator').forEach(el => el.style.display = 'flex');
 }
 
 // clic en dehors = fermer
@@ -971,6 +974,7 @@ window.addEventListener('click', function(e) {
 </body>
 
 </html>
+
 
 
 
