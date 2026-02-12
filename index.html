@@ -585,7 +585,9 @@
     cursor: pointer;
     z-index: 100000001 !important; /* pour être sûr qu'elle reste au-dessus de tout */
 }
-
+body.modal-open {
+  overflow: hidden;
+}
 .close:hover {
     color: #000;
 }
@@ -696,10 +698,12 @@
 <script>
     function openModal() {
         document.getElementById('modal').style.display = 'flex';
+		document.body.classList.add('modal-open');
     }
 
     function closeModal() {
         document.getElementById('modal').style.display = 'none';
+		document.body.classList.remove('modal-open');
         document.getElementById('gallery').style.display = 'block';
         document.getElementById('large-image').style.display = 'none';
     }
@@ -736,10 +740,12 @@
 
     function openModal2() {
         document.getElementById('modal2').style.display = 'flex';
+		document.body.classList.add('modal-open');
     }
 
     function closeModal2() {
         document.getElementById('modal2').style.display = 'none';
+		document.body.classList.remove('modal-open');
         document.getElementById('gallery2').style.display = 'block';
         document.getElementById('large-image2').style.display = 'none';
     }
@@ -760,10 +766,12 @@
 
     function openModal3() {
         document.getElementById('modal3').style.display = 'flex';
+		document.body.classList.add('modal-open');
     }
 
     function closeModal3() {
         document.getElementById('modal3').style.display = 'none';
+		document.body.classList.remove('modal-open');
         document.getElementById('gallery3').style.display = 'block';
         document.getElementById('large-image3').style.display = 'none';
     }
@@ -783,10 +791,12 @@
 
     function openModal4() {
         document.getElementById('modal4').style.display = 'flex';
+		document.body.classList.add('modal-open');
     }
 
     function closeModal4() {
         document.getElementById('modal4').style.display = 'none';
+		document.body.classList.remove('modal-open');
         document.getElementById('gallery4').style.display = 'block';
         document.getElementById('large-image4').style.display = 'none';
     }
@@ -806,10 +816,12 @@
 
     function openModal5() {
         document.getElementById('modal5').style.display = 'flex';
+		document.body.classList.add('modal-open');
     }
 
     function closeModal5() {
         document.getElementById('modal5').style.display = 'none';
+		document.body.classList.remove('modal-open');
         document.getElementById('gallery5').style.display = 'block';
         document.getElementById('large-image5').style.display = 'none';
     }
@@ -829,11 +841,13 @@
 <script>
 function openModalVideos() {
   document.getElementById('modalVideos').style.display = 'flex';
+	document.body.classList.add('modal-open');
 }
 
 function closeModalVideos() {
   document.getElementById('modalVideos').style.display = 'none';
   backToGalleryVideos();
+	document.body.classList.remove('modal-open');
 }
 
 function showVideo(url) {
@@ -868,11 +882,13 @@ window.addEventListener('click', function(e) {
 <script>
 function openModalVideos2() {
   document.getElementById('modalVideos2').style.display = 'flex';
+	document.body.classList.add('modal-open');
 }
 
 function closeModalVideos2() {
   document.getElementById('modalVideos2').style.display = 'none';
   backToGalleryVideos2();
+	document.body.classList.remove('modal-open');
 }
 
 function showVideo2(url) {
@@ -988,31 +1004,34 @@ window.addEventListener('click', function(e) {
 		<script>
 const form = document.getElementById("contact-form");
 
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
+if (form) {
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-  const data = new FormData(form);
+    const data = new FormData(form);
 
-  const response = await fetch(form.action, {
-    method: form.method,
-    body: data,
-    headers: {
-      'Accept': 'application/json'
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      alert("Message envoyé avec succès !");
+      form.reset();
+    } else {
+      alert("Une erreur est survenue. Réessaie.");
     }
   });
-
-  if (response.ok) {
-    alert("Message envoyé avec succès !");
-    form.reset();
-  } else {
-    alert("Une erreur est survenue. Réessaie.");
-  }
-});
+}
 </script>
 
 </body>
 
 </html>
+
 
 
 
