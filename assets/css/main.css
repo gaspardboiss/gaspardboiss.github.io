@@ -4688,13 +4688,13 @@ input, select, textarea {
 
 	}
 .photo-container {
-    text-align: left; /* au lieu de center */
+    text-align: center; /* au lieu de center */
     margin-bottom: 30px;
 
 }
 
 .photo-profil {
-    width: 280px; /* taille un peu grande */
+    width: 300px; /* taille un peu grande */
     max-width: 90%;
     border-radius: 20px; /* coins arrondis */
     border: 3px solid #8fa3b0; /* gris bleuté */
