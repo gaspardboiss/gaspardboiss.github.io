@@ -4687,9 +4687,10 @@ input, select, textarea {
 		}
 
 	}
-	.photo-container {
-    text-align: center;
+.photo-container {
+    text-align: left; /* au lieu de center */
     margin-bottom: 30px;
+
 }
 
 .photo-profil {
