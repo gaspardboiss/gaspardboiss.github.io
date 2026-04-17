@@ -4699,3 +4699,20 @@ input, select, textarea {
     border: 3px solid #8fa3b0; /* gris bleuté */
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
+.photo-profil {
+    width: 300px;
+    border-radius: 20px;
+    border: 2px solid #aab7c4;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: apparition 1s ease forwards;
+}
+
+@keyframes apparition {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
