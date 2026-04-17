@@ -4687,3 +4687,15 @@ input, select, textarea {
 		}
 
 	}
+	.photo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.photo-profil {
+    width: 280px; /* taille un peu grande */
+    max-width: 90%;
+    border-radius: 20px; /* coins arrondis */
+    border: 3px solid #8fa3b0; /* gris bleuté */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
