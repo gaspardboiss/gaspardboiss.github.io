@@ -4717,3 +4717,35 @@ input, select, textarea {
         transform: translateY(0);
     }
 }
+/* Overlay plein écran */
+#overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(15px); /* flou */
+	background: rgba(0, 0, 0, 0.6); /* assombrit */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+}
+
+/* Texte centré */
+.overlay-content {
+	text-align: center;
+	color: white;
+	font-size: 2rem;
+	font-family: Arial, sans-serif;
+}
+
+/* Option : animation douce */
+.overlay-content {
+	animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; transform: scale(0.9); }
+	to { opacity: 1; transform: scale(1); }
+}
