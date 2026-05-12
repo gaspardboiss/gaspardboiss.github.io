@@ -405,7 +405,7 @@
     <div class="thumbnail fade-in" onclick="showLarge6('images/nature1.jpg')">
         <img src="images/nature1.jpg">
     </div>
-
+</div>
 
 <div id="large-image6" class="large-image" style="display:none;">
      <img id="large-img6">
@@ -766,6 +766,9 @@ body.modal-open {
 		if (event.target == document.getElementById('modal5')) {
         closeModal5();
         }
+		if (event.target == document.getElementById('modal6')) {
+		closeModal6();
+		}
     };
 
     /* ---------- DEUXIÈME GALERIE ---------- */
@@ -879,7 +882,7 @@ body.modal-open {
         document.getElementById('modal6').style.display = 'none';
 		document.body.classList.remove('modal-open');
         document.getElementById('gallery6').style.display = 'block';
-        document.getElementById('large-image5').style.display = 'none';
+        document.getElementById('large-image6').style.display = 'none';
     }
 
     function showLarge6(src) {
