@@ -389,7 +389,31 @@
         </div>
     </div>
 </div>
+					
+<div id="modal6" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal6()">&times;</span>
+		<div id="gallery6" class="gallery">
+    <div class="thumbnail fade-in" onclick="showLarge6('images/nature2.jpg')">
+        <img src="images/hiver2.jpg">
+    </div>
+			
+    <div class="thumbnail fade-in" onclick="showLarge6('images/hiver7.jpg')">
+        <img src="images/hiver7.jpg">
+    </div>
+			
+    <div class="thumbnail fade-in" onclick="showLarge6('images/nature1.jpg')">
+        <img src="images/nature1.jpg">
+    </div>
 
+
+<div id="large-image6" class="large-image" style="display:none;">
+     <img id="large-img6">
+         <button onclick="backToGallery6()">Revenir à la galerie</button>
+        </div>
+    </div>
+</div>
+	
 <div id="modal5" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal5()">&times;</span>
@@ -843,6 +867,30 @@ body.modal-open {
     function backToGallery5() {
         document.getElementById('large-image5').style.display = 'none';
         document.getElementById('gallery5').style.display = 'block';
+    }
+
+
+    function openModal6() {
+        document.getElementById('modal6').style.display = 'flex';
+		document.body.classList.add('modal-open');
+    }
+
+    function closeModal6() {
+        document.getElementById('modal6').style.display = 'none';
+		document.body.classList.remove('modal-open');
+        document.getElementById('gallery6').style.display = 'block';
+        document.getElementById('large-image5').style.display = 'none';
+    }
+
+    function showLarge6(src) {
+        document.getElementById('large-img6').src = src;
+        document.getElementById('gallery6').style.display = 'none';
+        document.getElementById('large-image6').style.display = 'block';
+    }
+
+    function backToGallery6() {
+        document.getElementById('large-image6').style.display = 'none';
+        document.getElementById('gallery6').style.display = 'block';
     }
 </script>
 
