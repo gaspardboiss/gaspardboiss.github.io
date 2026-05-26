@@ -623,15 +623,15 @@
         justify-content: center;
         align-items: center;
     }
-.modal-content {
-    max-width: 90%;
-    max-height: 90%;
-    overflow-y: auto;
-    position: relative;
-    display: inline-block;
-    background: transparent;
-    padding: 0;
-}
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 90%;
+        max-height: 90%;
+        overflow-y: auto;
+        position: relative;
+    }
 .close {
     position: absolute;
     top: -22px;
@@ -649,21 +649,14 @@ body.modal-open {
     color: #000;
 }
 .gallery {
-    columns: 4 250px;
+    column-count: 4;
     column-gap: 10px;
-
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-
-    display: block;
+    margin-top: 15px;
 }
 
 .thumbnail {
     break-inside: avoid;
     margin-bottom: 10px;
-	overflow: hidden;
-    border-radius: 10px;
     cursor: pointer;
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
@@ -673,6 +666,7 @@ body.modal-open {
     width: 100%;
     height: auto;
     object-fit: cover;
+    border-radius: 12px;
     display: block;
 }
 
@@ -1114,5 +1108,4 @@ if (form) {
 </body>
 
 </html>
-
 
