@@ -623,15 +623,15 @@
         justify-content: center;
         align-items: center;
     }
-    .modal-content {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        max-width: 90%;
-        max-height: 90%;
-        overflow-y: auto;
-        position: relative;
-    }
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    position: relative;
+
+    background: transparent;
+    padding: 0;
+}
 .close {
     position: absolute;
     top: -22px;
@@ -651,7 +651,12 @@ body.modal-open {
 .gallery {
     column-count: 4;
     column-gap: 10px;
-    margin-top: 15px;
+
+    padding: 15px;
+    border-radius: 12px;
+    background: white;
+
+    width: fit-content;
 }
 
 .thumbnail {
