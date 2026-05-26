@@ -14,9 +14,20 @@
 		<style>
 .photo-droite {
     float: right;
-    width: 300px;
+    width: 450px;
+    max-width: 100%;
     margin: 0 0 20px 30px;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .photo-droite {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+        width: 100%;
+        max-width: 300px;
+    }
 }
 </style>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
