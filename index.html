@@ -1,1158 +1,788 @@
- <!DOCTYPE HTML>
-
-
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Portfolio audiovisuel de Gaspard Boissinot : vidéo, montage, photographie, drone et post-production.">
-		<title>Gaspard Boissinot</title>
-		<link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
-		<link rel="manifest" href="manifest.json">
-		<meta name="theme-color" content="#0e0e0e">
-		<link rel="apple-touch-icon" href="images/icon-192.png">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			
-	body {
-	background-color: #0e0e0e; 
-}
-			#intro {
-	position: relative;
-	min-height: 100vh;
-	overflow: hidden;
-}
-
-#intro {
-	position: relative;
-}
-
-#intro::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-image: url('images/Voiture noire.png');
-	background-size: cover;
-	background-position: center;
-	filter: blur(0px);
-	z-index: -1;
-	animation: fadeIn 2s ease-in;
-}
-
-@keyframes fadeIn {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-#intro .actions {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-}
-#intro .actions li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-#intro .actions a.button {
-    text-align: center;
-    width: 100%;
-    max-width: 300px; /* ou la taille que tu veux */
-}
-		</style>
-	</head>
-	<body class="is-preload">
-	<!-- Wrapper -->
-		<div id="wrapper" class="fade-in">
-
-			<!-- Intro -->
-				<div id="intro">
-  <div class="intro-content">
-    <h1>Gaspard Boissinot</h1>
-    <p>Audiovisuel ⸱ Cinéma ⸱ Montage ⸱ Photographie</p>
-    <ul class="actions">
-		<li>
-			<a href="#header" class="button icon solid solo fa-arrow-down scrolly">‎ 
-			</a>
-		</li> 
-	</ul> 
-  </div>
-				</div>
-			<!-- Header -->
-				<header id="header">
-					<a href="index.html" class="logo">Portfolio</a>
-				</header>
-
-			<!-- Nav -->
-				<nav id="nav">
-					<ul class="links">
-						<li class="active"><a href="index.html">Audiovisuel</a></li>
-						<li><a href="generic.html">à propos</a></li>
-						<li><a href="elements.html">Projets</a></li>
-					</ul>
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/gaspard-boissinot-57aab1403/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="https://www.youtube.com/@ormission" target="_blank" class="icon brands fa-youtube"><span class="label">Youtube</span></a></li>
-						<li><a href="https://www.instagram.com/gaspard._b" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					</ul>
-				</nav>
-
-			<!-- Main -->
-				<div id="main">
-					
-							<article class="post featured">
-								<header class="major">
-									<h2><a href="#" onclick="openModalVideos(); return false;">courts-métrages<br /></a></h2>
-								</header>
-								<a href="#" class="image fit" onclick="openModalVideos(); return false;">
-									<img src="images/DÖD.png" alt="" />
-								</a>
-								<ul class="actions special">
-									<li>
-										<a href="#" class="button large" onclick="openModalVideos(); return false;">Voir</a>
-									</li>
-								</ul>
-							</article>
-					<!-- Featured Post -->
-
-					<!-- Posts -->
-						<section class="posts">
-						<article>
-							<header>
-								<h2><a href="#" onclick="openModal3(); return false;">Portraits<br /></a></h2>
-							</header>
-							<a href="#" class="image main" onclick="openModal3(); return false;" style="display:flex; justify-content:center; gap:10px;">
-								<img src="images/portrait1.jpg" style="width:50%; height:auto;">
-								<img src="images/portrait3.jpg" style="width:50%; height:auto;"></a>
-							<ul class="actions special">
-								<li><a href="#" class="button"onclick="openModal3(); return false;">Voir</a></li>
-							</ul>
-						</article>
-
-							<article>
-								<header>
-									<h2><a href="#" onclick="openModal(); return false;">noir & blanc<br /></a></h2>
-								</header>
-								<a href="#" class="image fit" onclick="openModal(); return false;">
-									<img src="images/rose.jpg" alt="" />
-								</a>
-								<p></p>
-								<ul class="actions special">
-									<li><a href="#" class="button" onclick="openModal(); return false;">Voir</a></li>
-								</ul>
-							</article>
-							
-							<article>
-								<header>
-									<h2><a href="#" onclick="openModal4(); return false;">Architecture<br /></a></h2>
-								</header>
-								<a href="#" class="image fit" onclick="openModal4(); return false;">
-									<img src="images/archi6.jpg" alt="" style="width:65%; margin:auto; display:block;"/>
-								</a>
-								<ul class="actions special">
-									<li>
-										<a href="#" class="button" onclick="openModal4(); return false;">Voir</a>
-									</li>
-								</ul>
-							</article>
-							
-							<article>
-								<header>
-									<h2><a href="#" onclick="openModal5(); return false;">Pose Longue<br /></a></h2>
-								</header>
-								<a href="#" class="image fit" onclick="openModal5(); return false;">
-									<img src="images/flou9.jpg" alt="" style="width:65%; margin:auto; display:block;" />
-								</a>
-								<p></p>
-								<ul class="actions special">
-									<li><a href="#" class="button" onclick="openModal5(); return false;">Voir</a></li>
-								</ul>
-							</article>
-							<article>
-								<header>
-									<h2><a href="#" onclick="openModal6(); return false;">Nature<br /></a></h2>
-								</header>
-								<a href="#" class="image fit" onclick="openModal6(); return false;">
-									<img src="images/nature1.jpg" alt="" style="width:65%; margin:auto; display:block;" />
-								</a>
-								<p></p>
-								<ul class="actions special">
-									<li><a href="#" class="button"onclick="openModal6(); return false;">Voir</a></li>
-								</ul>
-							</article>
-							
-							<article>
-								<header>
-									<h2><a href="#" onclick="openModal2(); return false;">Prises de vues<br />
-									drones</a></h2>
-								</header>
-								<a href="#" class="image fit" onclick="openModal2(); return false;">
-									<img src="images/hiver2.jpg" alt="" />
-								</a>
-								<p></p>
-								<ul class="actions special">
-									<li><a href="#" class="button"onclick="openModal2(); return false;">Voir</a></li>
-								</ul>
-							</article>
-							
-							<article class="full-width">
-								<header>
-									<h2><a href="#" onclick="openModalVideos2(); return false;">Montages variés<br /></a></h2>
-								</header>
-								<a href="#" class="image fit" onclick="openModalVideos2(); return false;">
-									<img src="images/hiverdrone.png" alt="" />
-								</a>
-								<ul class="actions special">
-									<li>
-										<a href="#" class="button large" onclick="openModalVideos2(); return false;">Voir</a>
-									</li>
-								</ul>
-							</article>
-						</section>
-					
-
-<!-- Modale pour la galerie -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div id="gallery" class="gallery">
-    <div class="thumbnail fade-in" onclick="showLarge('images/rue.jpg')">
-        <img src="images/rue.jpg" alt="Photo 1">
-    </div>
-
-    <div class="thumbnail fade-in" onclick="showLarge('images/rose.jpg')">
-        <img src="images/rose.jpg" alt="Photo 2">
-    </div>
-			
-	 <div class="thumbnail fade-in" onclick="showLarge('images/noiretblanc.jpg')">
-        <img src="images/noiretblanc.jpg" alt="Photo 4">
-    </div>
-	<div class="thumbnail fade-in" onclick="showLarge('images/expo3.jpg')">
-        <img src="images/expo3.jpg" alt="Photo 7">
-	 </div>
-	<div class="thumbnail fade-in" onclick="showLarge('images/oiseaux.jpg')">
-        <img src="images/oiseaux.jpg" alt="Photo 5">
-	 </div>
-
-	<div class="thumbnail fade-in" onclick="showLarge('images/b&w1.jpg')">
-        <img src="images/b&w1.jpg" alt="Photo 6">
-	 </div>
-
-</div>
-        <div id="large-image" class="large-image" style="display: none;">
-            <img id="large-img" src="" alt="Grande image">
-            <button style="margin-top:15px;" onclick="backToGallery()">Revenir à la galerie</button>
-        </div>
-    </div>
-</div>
-
-<div id="modal2" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal2()">&times;</span>
-		<div id="gallery2" class="gallery">
-    <div class="thumbnail fade-in" onclick="showLarge2('images/hiver2.jpg')">
-        <img src="images/hiver2.jpg">
-    </div>
-			
-    <div class="thumbnail fade-in" onclick="showLarge2('images/hiver1.jpg')">
-        <img src="images/hiver1.jpg">
-    </div>
-			
-    <div class="thumbnail fade-in" onclick="showLarge2('images/hiver3.jpg')">
-        <img src="images/hiver3.jpg">
-    </div>
-
-	   <div class="thumbnail fade-in" onclick="showLarge2('images/hiver4.jpg')">
-        <img src="images/hiver4.jpg">
-    </div>
-
-	<div class="thumbnail fade-in" onclick="showLarge2('images/hiver5.jpg')">
-        <img src="images/hiver5.jpg">
-    </div>
-			
-	<div class="thumbnail fade-in" onclick="showLarge2('images/hiver6.jpg')">
-        <img src="images/hiver6.jpg">
-    </div>
-			
-	<div class="thumbnail fade-in" onclick="showLarge2('images/drone1.jpg')">
-        <img src="images/drone1.jpg">
-    </div>
-			
-	<div class="thumbnail fade-in" onclick="showLarge2('images/drone2.jpg')">
-        <img src="images/drone2.jpg">
-    </div>
-<div class="thumbnail fade-in" onclick="showLarge2('images/drone3.jpg')">
-        <img src="images/drone3.jpg">
-    </div>
-</div>
-
-<div id="large-image2" class="large-image" style="display:none;">
-     <img id="large-img2">
-         <button onclick="backToGallery2()">Revenir à la galerie</button>
-        </div>
-    </div>
-</div>
-
-<div id="modal3" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal3()">&times;</span>
-		<div id="gallery3" class="gallery">
-    <div class="thumbnail fade-in" onclick="showLarge3('images/portrait1.jpg')">
-        <img src="images/portrait1.jpg">
-    </div>
-		<div class="thumbnail fade-in" onclick="showLarge3('images/portrait11.jpg')">
-        <img src="images/portrait11.jpg">
-</div>
-			<div class="thumbnail fade-in" onclick="showLarge3('images/école3.jpg')">
-        <img src="images/école3.jpg">
-    </div>	
-    <div class="thumbnail fade-in" onclick="showLarge3('images/portrait2.jpg')">
-        <img src="images/portrait2.jpg">
-    </div>
-
-	    <div class="thumbnail fade-in" onclick="showLarge3('images/pompier2.jpg')">
-        <img src="images/pompier2.jpg">
-    </div>
-			
-			
-    <div class="thumbnail fade-in" onclick="showLarge3('images/portrait3.jpg')">
-        <img src="images/portrait3.jpg">
-    </div>
-			
-<div class="thumbnail fade-in" onclick="showLarge3('images/portrait13.jpg')">
-        <img src="images/portrait13.jpg">
-</div>
-
-<div class="thumbnail fade-in" onclick="showLarge3('images/portrait6.jpg')">
-        <img src="images/portrait6.jpg">
-    </div>
-
-  <div class="thumbnail fade-in" onclick="showLarge3('images/portrait7.jpg')">
-        <img src="images/portrait7.jpg">
-    </div>
-
-	   <div class="thumbnail fade-in" onclick="showLarge3('images/portrait10.jpg')">
-        <img src="images/portrait10.jpg">
-    </div>
-		   <div class="thumbnail fade-in" onclick="showLarge3('images/portrait4.jpg')">
-        <img src="images/portrait4.jpg">
-    </div>
-			
-	<div class="thumbnail fade-in" onclick="showLarge3('images/portrait12.jpg')">
-        <img src="images/portrait12.jpg">
-    </div>
-
-	<div class="thumbnail fade-in" onclick="showLarge3('images/école.jpg')">
-        <img src="images/école.jpg">
-    </div>
-
-	    <div class="thumbnail fade-in" onclick="showLarge3('images/pompier1.jpg')">
-        <img src="images/pompier1.jpg">
-    </div>
-
-	<div class="thumbnail fade-in" onclick="showLarge3('images/portrait15.jpg')">
-        <img src="images/portrait15.jpg">
-    </div>
-		<div class="thumbnail fade-in" onclick="showLarge3('images/école2.jpg')">
-        <img src="images/école2.jpg">
-    </div>
-	<div class="thumbnail fade-in" onclick="showLarge3('images/portrait5.jpg')">
-        <img src="images/portrait5.jpg">
-    </div>
-	<div class="thumbnail fade-in" onclick="showLarge3('images/portrait14.jpg')">
-        <img src="images/portrait14.jpg">
-    </div>
-
-
-			
-</div>
-
-<div id="large-image3" class="large-image" style="display:none;">
-     <img id="large-img3">
-         <button onclick="backToGallery3()">Revenir à la galerie</button>
-        </div>
-    </div>
-</div>
-
-<div id="modal4" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal4()">&times;</span>
-		<div id="gallery4" class="gallery">
-    <div class="thumbnail fade-in" onclick="showLarge4('images/archi1.jpg')">
-        <img src="images/archi1.jpg">
-    </div>
-			
-    <div class="thumbnail fade-in" onclick="showLarge4('images/archi5.jpg')">
-        <img src="images/archi5.jpg">
-    </div>
-			
-    <div class="thumbnail fade-in" onclick="showLarge4('images/chateau1.jpg')">
-        <img src="images/chateau1.jpg">
-    </div>
-
-	   <div class="thumbnail fade-in" onclick="showLarge4('images/chateau2.jpg')">
-        <img src="images/chateau2.jpg">
-    </div>
-
-	<div class="thumbnail fade-in" onclick="showLarge4('images/archi4.jpg')">
-        <img src="images/archi4.jpg">
-    </div>
-			
-	<div class="thumbnail fade-in" onclick="showLarge4('images/archi3.jpg')">
-        <img src="images/archi3.jpg">
-    </div>
-	<div class="thumbnail fade-in" onclick="showLarge4('images/archi2.jpg')">
-        <img src="images/archi2.jpg">
-    </div>
-<div class="thumbnail fade-in" onclick="showLarge4('images/batiment1.jpg')">
-        <img src="images/batiment1.jpg">
-    </div>
-
-<div class="thumbnail fade-in" onclick="showLarge4('images/archi6.jpg')">
-        <img src="images/archi6.jpg">
-</div>
-
-<div class="thumbnail fade-in" onclick="showLarge4('images/archi7.jpg')">
-        <img src="images/archi7.jpg">
-</div>
-
-<div class="thumbnail fade-in" onclick="showLarge4('images/archi8.jpg')">
-        <img src="images/archi8.jpg">
-</div>
-
-<div class="thumbnail fade-in" onclick="showLarge4('images/archi9.jpg')">
-        <img src="images/archi9.jpg">
-</div>
-			
-</div>
-
-<div id="large-image4" class="large-image" style="display:none;">
-     <img id="large-img4">
-         <button onclick="backToGallery4()">Revenir à la galerie</button>
-        </div>
-    </div>
-</div>
-					
-<div id="modal6" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal6()">&times;</span>
-		<div id="gallery6" class="gallery">
-    <div class="thumbnail fade-in" onclick="showLarge6('images/nature2.jpg')">
-        <img src="images/nature2.jpg">
-    </div>
-	    <div class="thumbnail fade-in" onclick="showLarge6('images/nature11.jpg')">
-        <img src="images/nature11.jpg">
-    </div>
-    <div class="thumbnail fade-in" onclick="showLarge6('images/hiver7.jpg')">
-        <img src="images/hiver7.jpg">
-    </div>
-		    <div class="thumbnail fade-in" onclick="showLarge6('images/nature8.jpg')">
-        <img src="images/nature8.jpg">
-    </div>
-	  <div class="thumbnail fade-in" onclick="showLarge6('images/ciel2.jpg')">
-        <img src="images/ciel2.jpg">
-    </div>
-    <div class="thumbnail fade-in" onclick="showLarge6('images/nature7.jpg')">
-        <img src="images/nature7.jpg">
-    </div>
-		    <div class="thumbnail fade-in" onclick="showLarge6('images/nature6.jpg')">
-        <img src="images/nature6.jpg">
-    </div>
-	    <div class="thumbnail fade-in" onclick="showLarge6('images/nature9.jpg')">
-        <img src="images/nature9.jpg">
-    </div>
-	    <div class="thumbnail fade-in" onclick="showLarge6('images/nature4.jpg')">
-        <img src="images/nature4.jpg">
-    </div>
-    <div class="thumbnail fade-in" onclick="showLarge6('images/nature1.jpg')">
-        <img src="images/nature1.jpg">
-    </div>
-	 <div class="thumbnail fade-in" onclick="showLarge6('images/ciel1.jpg')">
-        <img src="images/ciel1.jpg">
-    </div>
-	  <div class="thumbnail fade-in" onclick="showLarge6('images/nature3.jpg')">
-        <img src="images/nature3.jpg">
-    </div>
-			    <div class="thumbnail fade-in" onclick="showLarge6('images/nature5.jpg')">
-        <img src="images/nature5.jpg">
-    </div>
-	    <div class="thumbnail fade-in" onclick="showLarge6('images/nature10.jpg')">
-        <img src="images/nature10.jpg">
-    </div>
-
-</div>
-
-<div id="large-image6" class="large-image" style="display:none;">
-     <img id="large-img6">
-         <button onclick="backToGallery6()">Revenir à la galerie</button>
-        </div>
-    </div>
-</div>
-	
-<div id="modal5" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal5()">&times;</span>
-		<div id="gallery5" class="gallery">
-    <div class="thumbnail fade-in" onclick="showLarge5('images/flou1.jpg')">
-        <img src="images/flou1.jpg">
-    </div>
-			
-			
-	<div class="thumbnail fade-in" onclick="showLarge5('images/expo1.jpg')">
-        <img src="images/expo1.jpg">
-    </div>
-			
-    <div class="thumbnail fade-in" onclick="showLarge5('images/flou9.jpg')">
-        <img src="images/flou9.jpg">
-    </div>
-			
-	<div class="thumbnail fade-in" onclick="showLarge5('images/Voitnoire.jpg')">
-        <img src="images/Voitnoire.jpg">
-    </div>
-  
-	   <div class="thumbnail fade-in" onclick="showLarge5('images/flou7.jpg')">
-        <img src="images/flou7.jpg">
-    </div>
-
-	<div class="thumbnail fade-in" onclick="showLarge5('images/expo2.jpg')">
-        <img src="images/expo2.jpg">
-    </div>
-
-	<div class="thumbnail fade-in" onclick="showLarge5('images/flou3.jpg')">
-        <img src="images/flou3.jpg">
-    </div>
-			
-	<div class="thumbnail fade-in" onclick="showLarge5('images/flou10.jpg')">
-        <img src="images/flou10.jpg">
-    </div>
-</div>
-
-<div id="large-image5" class="large-image" style="display:none;">
-     <img id="large-img5">
-         <button onclick="backToGallery5()">Revenir à la galerie</button>
-        </div>
-    </div>
-</div>
-<div id="modalVideos" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModalVideos()">&times;</span>
-
-    <!-- Galerie -->
-<div id="galleryVideos" class="gallery">
-
-  <div class="thumbnail fade-in"
-       onclick="showVideo('https://www.youtube.com/embed/1Mja8tMPmmc')">
-    <img src="https://img.youtube.com/vi/1Mja8tMPmmc/hqdefault.jpg">
-  </div>
- <div class="thumbnail fade-in"
-       onclick="showVideo('https://www.youtube.com/embed/PgySILbVU0c')">
-    <img src="https://img.youtube.com/vi/PgySILbVU0c/hqdefault.jpg">
-  </div>
-<div class="thumbnail fade-in"
-       onclick="showVideo('https://www.youtube.com/embed/r1Cv7a5lTPU')">
-    <img src="https://img.youtube.com/vi/r1Cv7a5lTPU/hqdefault.jpg">
-</div>
-	 <div class="thumbnail fade-in"
-       onclick="showVideo('https://youtu.be/Escy0MCVTmo')">
-    <img src="https://img.youtube.com/vi/Escy0MCVTmo/hqdefault.jpg">
-  </div>
-</div>
-
-	<div class="modal-separator">
-  <span>Projets lycée</span>
-</div>
-	<div id="galleryVideosLycee" class="gallery">
-
- <div class="thumbnail fade-in"
-       onclick="showVideo('https://www.youtube.com/embed/838EboJXgMQ')">
-    <img src="https://img.youtube.com/vi/838EboJXgMQ/hqdefault.jpg">
-  </div>
-<div class="thumbnail fade-in"
-       onclick="showVideo('https://www.youtube.com/embed/s9DObtl3CgE')">
-    <img src="https://img.youtube.com/vi/s9DObtl3CgE/hqdefault.jpg">
-  </div>
-</div>
-    <!-- Vidéo en grand -->
-    <div id="large-video" class="large-image" style="display:none;">
-		
-<iframe id="videoPlayer"
-        width="100%"
-        height="500"
-        src=""
-        frameborder="0"
-        allow="autoplay; fullscreen"
-        allowfullscreen>
-</iframe>
-      <button style="margin-top:15px;" onclick="backToGalleryVideos()">
-        Revenir à la galerie
-      </button>
-    </div>
-  </div>
-</div>
-<div id="modalVideos2" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModalVideos2()">&times;</span>
-
-  <div id="galleryVideos2Main" class="gallery">
-      <div class="thumbnail fade-in"
-           onclick="showVideo2('https://www.youtube.com/embed/dMNVtVzXCAg')">
-        <img src="https://img.youtube.com/vi/dMNVtVzXCAg/hqdefault.jpg">
-      </div>
-    </div>
-
-    <!-- ===== MONTAGE DRONE ===== -->
-<div class="modal-separator">
-  <span>Montages drone</span>
-</div>
-    <div id="galleryVideos2Drone" class="gallery">
-      <div class="thumbnail fade-in"
-           onclick="showVideo2('https://www.youtube.com/embed/1khe2eo4Kbc')">
-        <img src="https://img.youtube.com/vi/1khe2eo4Kbc/hqdefault.jpg">
-      </div>
-
-      <div class="thumbnail fade-in"
-           onclick="showVideo2('https://www.youtube.com/embed/N5z96sImUpc')">
-        <img src="https://img.youtube.com/vi/N5z96sImUpc/hqdefault.jpg">
-      </div>
-    </div>
-
-    <div class="modal-separator">
-      <span>Montages jeux vidéo</span>
-    </div>
-
-    <!-- ===== MONTAGE JEUX VIDÉO ===== -->
-    <div id="galleryVideos2Game" class="gallery">
-      <div class="thumbnail fade-in"
-           onclick="showVideo2('https://www.youtube.com/embed/Z0JBgfGNSEo')">
-        <img src="https://img.youtube.com/vi/Z0JBgfGNSEo/hqdefault.jpg">
-      </div>
-
-      <div class="thumbnail fade-in"
-           onclick="showVideo2('https://www.youtube.com/embed/v4AnSb6EHak')">
-        <img src="https://img.youtube.com/vi/v4AnSb6EHak/hqdefault.jpg">
-      </div>
-	 <div class="thumbnail fade-in"
-           onclick="showVideo2('https://www.youtube.com/embed/yUJhlouEDs4')">
-        <img src="https://img.youtube.com/vi/yUJhlouEDs4/hqdefault.jpg">
-      </div>
-    </div>
-
-    <!-- ===== VIDÉO EN GRAND ===== -->
-    <div id="large-video2" class="large-image" style="display:none;">
-      <iframe id="videoPlayer2"
-              width="100%"
-              height="500"
-              src=""
-              frameborder="0"
-              allow="autoplay; fullscreen"
-              allowfullscreen></iframe>
-
-      <button onclick="backToGalleryVideos2()">Revenir à la galerie</button>
-    </div>
-
-  </div>
-</div>
-<!-- Styles pour la modale (inchangés, mais assurez-vous qu'ils sont dans <head> ou ici) -->
-<style>
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 99999999 !important;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        justify-content: center;
-        align-items: center;
-    }
-    .modal-content {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        max-width: 90%;
-        max-height: 90%;
-        overflow-y: auto;
-        position: relative;
-    }
-.close {
-    position: absolute;
-    top: -22px;
-    right: 10px;
-    color: #aaa;
-    font-size: 36px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 100000001 !important; /* pour être sûr qu'elle reste au-dessus de tout */
-}
-body.modal-open {
-  overflow: hidden;
-}
-.close:hover {
-    color: #000;
-}
-.gallery {
-    column-count: 4;
-    column-gap: 10px;
-    margin-top: 15px;
-}
-
-.thumbnail {
-    break-inside: avoid;
-    margin-bottom: 10px;
-    cursor: pointer;
-    opacity: 0;
-    animation: fadeIn 1s ease-in forwards;
-}
-
-.thumbnail img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-}
-
-    .thumbnail:nth-child(1) { animation-delay: 0.1s; }
-    .thumbnail:nth-child(2) { animation-delay: 0.2s; }
-    .thumbnail:nth-child(3) { animation-delay: 0.3s; }
-    .thumbnail:nth-child(4) { animation-delay: 0.4s; }
-    .thumbnail:nth-child(5) { animation-delay: 0.5s; }
-    .thumbnail:nth-child(6) { animation-delay: 0.6s; }
-    .thumbnail:nth-child(7) { animation-delay: 0.7s; }
-	.thumbnail:nth-child(8) { animation-delay: 0.8s; }
-    .thumbnail:nth-child(9) { animation-delay: 0.85s; }
-    .thumbnail:nth-child(10) { animation-delay: 0.9s; }
-    .thumbnail:nth-child(11) { animation-delay: 0.92s; }
-    .thumbnail:nth-child(12) { animation-delay: 0.98s; }
-    .thumbnail:nth-child(13) { animation-delay: 1s; }
-    .thumbnail:nth-child(14) { animation-delay: 1.05s; }
-	.thumbnail:nth-child(15) { animation-delay: 1.1s; }
-    .thumbnail:nth-child(16) { animation-delay: 1.12s; }
-    .thumbnail:nth-child(17) { animation-delay: 1.18s; }
-    .thumbnail:nth-child(18) { animation-delay: 1.2s; }
-    /* Ajoutez des délais pour plus d'images */
-.large-image {
-    display: flex;
-    flex-direction: column; /* empile verticalement */
-    align-items: center;    /* centre horizontalement */
-    justify-content: flex-start; /* commence en haut */
-    text-align: center;
-    gap: 15px; /* espace entre image et bouton */
-}
-.large-image img {
-    max-width: 100%;
-    max-height: 80vh;
-    display: block; 
-}
-
-.large-image button {
-    margin-top: 0; 
-}
-.modal-separator {
-  display: flex;
-  align-items: center;
-  margin: 30px 0;
-  opacity: 0;
-  animation: fadeIn 1.4s ease forwards;
-}
-#footer .contact a {
-  border-bottom: none !important;
-  text-decoration: none;
-  display: inline-block;
-}
-.modal-separator::before,
-.modal-separator::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: rgba(0,0,0,0.2);
-}
-
-.modal-separator span {
-  padding: 0 15px;
-  font-size: 0.9em;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #333;
-}
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-	@media (max-width: 1000px) {
-  .gallery { column-count: 3; }
-}
-
-@media (max-width: 768px) {
-  .gallery { column-count: 2; }
-}
-
-@media (max-width: 480px) {
-  .gallery { column-count: 2; }
-}
-.posts article.full-width {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-}
-
-.posts article.full-width .image img {
-    width: 100%;
-    height: 500px; 
-    object-fit: contain;
-}
-</style>
-
-<!-- Script JavaScript corrigé -->
-<script>
-    function openModal() {
-        document.getElementById('modal').style.display = 'flex';
-		document.body.classList.add('modal-open');
-    }
-
-    function closeModal() {
-        document.getElementById('modal').style.display = 'none';
-		document.body.classList.remove('modal-open');
-        document.getElementById('gallery').style.display = 'block';
-        document.getElementById('large-image').style.display = 'none';
-    }
-
-    function showLarge(src) {
-        document.getElementById('large-img').src = src;
-        document.getElementById('gallery').style.display = 'none';
-        document.getElementById('large-image').style.display = 'block';
-    }
-	function backToGallery() {
-		document.getElementById('large-image').style.display = 'none';
-		document.getElementById('gallery').style.display = 'block';
-	}
-    // Fermer la modale en cliquant en dehors
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('modal')) {
-            closeModal();
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Portfolio audiovisuel de Gaspard Boissinot : vidéo, montage, photographie, drone et post-production.">
+    <title>Gaspard Boissinot — Portfolio Audiovisuel</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#090a0f">
+    <link rel="apple-touch-icon" href="images/icon-192.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CONSTANTES & DIRECTION ARTISTIQUE --- */
+        :root {
+            --bg-main: #090a0f;
+            --bg-card: #12141c;
+            --bg-nav: rgba(9, 10, 15, 0.9);
+            --text-primary: #ffffff;
+            --text-muted: #8c95a1;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(255, 255, 255, 0.3);
         }
-        if (event.target == document.getElementById('modal2')) {
-            closeModal2();
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
-		if (event.target == document.getElementById('modal3')) {
-        closeModal3();
+
+        a { color: inherit; text-decoration: none; }
+
+        /* --- HERO SECTION AVEC VRAI PARALLAXE FIXE --- */
+        .hero {
+            position: relative;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            background-image: url('images/Voiture noire.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* L'image reste parfaitement attachée au fond */
         }
-		if (event.target == document.getElementById('modal4')) {
-        closeModal4();
+
+        /* Voile assombrissant cinématique */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(9, 10, 15, 0.55);
+            z-index: 1;
         }
-		if (event.target == document.getElementById('modal5')) {
-        closeModal5();
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 180px;
+            background: linear-gradient(to top, var(--bg-main), transparent);
+            z-index: 2;
         }
-		if (event.target == document.getElementById('modal6')) {
-		closeModal6();
-		}
-    };
 
-    /* ---------- DEUXIÈME GALERIE ---------- */
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 0 20px;
+        }
 
-    function openModal2() {
-        document.getElementById('modal2').style.display = 'flex';
-		document.body.classList.add('modal-open');
-    }
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 700;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            color: #ffffff;
+        }
 
-    function closeModal2() {
-        document.getElementById('modal2').style.display = 'none';
-		document.body.classList.remove('modal-open');
-        document.getElementById('gallery2').style.display = 'block';
-        document.getElementById('large-image2').style.display = 'none';
-    }
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            letter-spacing: 5px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
 
-    function showLarge2(src) {
-        document.getElementById('large-img2').src = src;
-        document.getElementById('gallery2').style.display = 'none';
-        document.getElementById('large-image2').style.display = 'block';
-    }
+        .hero-subtitle .dot {
+            font-size: 0.5rem;
+            vertical-align: middle;
+            margin: 0 8px;
+            opacity: 0.6;
+        }
 
-    function backToGallery2() {
-        document.getElementById('large-image2').style.display = 'none';
-        document.getElementById('gallery2').style.display = 'block';
-    }
+        /* --- NAVBAR CENTRAGE ABSOLU IMPARABLE --- */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: var(--bg-nav);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            position: relative;
+        }
 
+        .nav-brand {
+            font-weight: 600;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            z-index: 2;
+        }
 
-	    /* ---------- TROISIEME GALERIE ---------- */
+        .nav-links { 
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex; 
+            gap: 40px; 
+            list-style: none; 
+            z-index: 2;
+        }
 
-    function openModal3() {
-        document.getElementById('modal3').style.display = 'flex';
-		document.body.classList.add('modal-open');
-    }
+        .nav-links a { 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: var(--text-muted); 
+            transition: color 0.3s; 
+            font-weight: 500; 
+        }
 
-    function closeModal3() {
-        document.getElementById('modal3').style.display = 'none';
-		document.body.classList.remove('modal-open');
-        document.getElementById('gallery3').style.display = 'block';
-        document.getElementById('large-image3').style.display = 'none';
-    }
+        .nav-links a.active, .nav-links a:hover { 
+            color: #ffffff; 
+        }
 
-    function showLarge3(src) {
-        document.getElementById('large-img3').src = src;
-        document.getElementById('gallery3').style.display = 'none';
-        document.getElementById('large-image3').style.display = 'block';
-    }
+        .nav-socials { 
+            display: flex; 
+            gap: 24px; 
+            z-index: 2;
+        }
 
-    function backToGallery3() {
-        document.getElementById('large-image3').style.display = 'none';
-        document.getElementById('gallery3').style.display = 'block';
-    }
+        .nav-socials a { 
+            color: var(--text-muted); 
+            font-size: 1.1rem; 
+            transition: color 0.3s, transform 0.3s; 
+        }
 
-    /* ---------- QUATRIEME GALERIE ---------- */
+        .nav-socials a:hover { 
+            color: #ffffff; 
+            transform: translateY(-2px); 
+        }
 
-    function openModal4() {
-        document.getElementById('modal4').style.display = 'flex';
-		document.body.classList.add('modal-open');
-    }
+        /* --- GRILLE MODULAIRE ARTISTIQUE (SANS TROUS) --- */
+        .container { 
+            max-width: 1300px; 
+            margin: 0 auto; 
+            padding: 90px 30px; 
+        }
+        
+        .section-title { 
+            text-align: center; 
+            font-size: 1.4rem; 
+            letter-spacing: 6px; 
+            text-transform: uppercase; 
+            margin-bottom: 70px; 
+            font-weight: 600; 
+            color: var(--text-muted); 
+        }
 
-    function closeModal4() {
-        document.getElementById('modal4').style.display = 'none';
-		document.body.classList.remove('modal-open');
-        document.getElementById('gallery4').style.display = 'block';
-        document.getElementById('large-image4').style.display = 'none';
-    }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
 
-    function showLarge4(src) {
-        document.getElementById('large-img4').src = src;
-        document.getElementById('gallery4').style.display = 'none';
-        document.getElementById('large-image4').style.display = 'block';
-    }
+        .card {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s;
+        }
 
-    function backToGallery4() {
-        document.getElementById('large-image4').style.display = 'none';
-        document.getElementById('gallery4').style.display = 'block';
-    }
+        .card.span-12 { grid-column: span 12; aspect-ratio: 21/9; }
+        .card.span-6  { grid-column: span 6;  aspect-ratio: 16/10; }
 
- /* ---------- CINQUIEME GALERIE ---------- */
+        .card-inner {
+            width: 100%; height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
 
-    function openModal5() {
-        document.getElementById('modal5').style.display = 'flex';
-		document.body.classList.add('modal-open');
-    }
+        .card-img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s;
+            filter: brightness(0.88);
+        }
 
-    function closeModal5() {
-        document.getElementById('modal5').style.display = 'none';
-		document.body.classList.remove('modal-open');
-        document.getElementById('gallery5').style.display = 'block';
-        document.getElementById('large-image5').style.display = 'none';
-    }
+        /* Zoom ciblé pour éliminer les bandes noires intégrées aux miniatures YouTube */
+        .cropped-thumbnail {
+            transform: scale(1.22);
+            transform-origin: center;
+        }
 
-    function showLarge5(src) {
-        document.getElementById('large-img5').src = src;
-        document.getElementById('gallery5').style.display = 'none';
-        document.getElementById('large-image5').style.display = 'block';
-    }
+        /* Voile épuré avec pointer-events none pour ne pas bloquer les clics */
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 45%, rgba(9, 10, 15, 0.85) 100%);
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-end; 
+            padding: 35px;
+            transition: background 0.3s;
+            pointer-events: none; 
+            z-index: 2;
+        }
 
-    function backToGallery5() {
-        document.getElementById('large-image5').style.display = 'none';
-        document.getElementById('gallery5').style.display = 'block';
-    }
+        .card-title {
+            font-size: 1.4rem; 
+            font-weight: 600; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            color: #ffffff;
+            transform: translateY(4px); 
+            transition: transform 0.4s ease;
+        }
 
+        .card-subtitle { 
+            font-size: 0.75rem; 
+            color: var(--text-muted); 
+            margin-top: 6px; 
+            letter-spacing: 1.5px; 
+            text-transform: uppercase;
+        }
 
-    function openModal6() {
-        document.getElementById('modal6').style.display = 'flex';
-		document.body.classList.add('modal-open');
-    }
+        .card-btn {
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            margin-top: 14px; 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: #ffffff; 
+            font-weight: 600;
+            opacity: 0; 
+            transform: translateY(10px);
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: auto;
+        }
 
-    function closeModal6() {
-        document.getElementById('modal6').style.display = 'none';
-		document.body.classList.remove('modal-open');
-        document.getElementById('gallery6').style.display = 'block';
-        document.getElementById('large-image6').style.display = 'none';
-    }
+        .card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--border-hover); 
+        }
+        
+        .card:hover .card-img { 
+            transform: scale(1.08); 
+            filter: brightness(1); 
+        }
 
-    function showLarge6(src) {
-        document.getElementById('large-img6').src = src;
-        document.getElementById('gallery6').style.display = 'none';
-        document.getElementById('large-image6').style.display = 'block';
-    }
+        .card:hover .cropped-thumbnail {
+            transform: scale(1.28);
+        }
+        
+        .card:hover .card-title { 
+            transform: translateY(0); 
+        }
+        
+        .card:hover .card-btn { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
 
-    function backToGallery6() {
-        document.getElementById('large-image6').style.display = 'none';
-        document.getElementById('gallery6').style.display = 'block';
-    }
-</script>
+        /* --- FOOTER MINIMALISTE --- */
+        .footer { 
+            background: #06070a; 
+            border-top: 1px solid var(--border-subtle); 
+            padding: 100px 30px 50px; 
+            margin-top: 100px; 
+        }
+        
+        .footer-grid { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 80px; 
+        }
 
-<script>
-function openModalVideos() {
-  document.getElementById('modalVideos').style.display = 'flex';
-	document.body.classList.add('modal-open');
-}
+        .contact-form input, .contact-form textarea { 
+            width: 100%; 
+            background: #11131a; 
+            border: 1px solid var(--border-subtle); 
+            padding: 16px 20px; 
+            color: #fff; 
+            border-radius: 4px; 
+            margin-bottom: 20px; 
+            font-family: inherit; 
+            font-size: 0.9rem;
+            transition: border-color 0.3s; 
+        }
+        
+        .contact-form input:focus, .contact-form textarea:focus { 
+            outline: none; 
+            border-color: #ffffff; 
+        }
 
-function closeModalVideos() {
-  document.getElementById('modalVideos').style.display = 'none';
-  backToGalleryVideos();
-	document.body.classList.remove('modal-open');
-}
+        .submit-btn { 
+            background: #ffffff; 
+            color: #000000; 
+            border: none; 
+            padding: 15px 35px; 
+            border-radius: 4px; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            font-size: 0.8rem;
+            transition: background 0.3s; 
+        }
+        
+        .submit-btn:hover { background: #dcdcdc; }
 
-function showVideo(url) {
-  // cacher toutes les miniatures et le séparateur
-  document.getElementById('galleryVideos').style.display = 'none';
-  document.getElementById('galleryVideosLycee').style.display = 'none';
-  document.querySelector('.modal-separator').style.display = 'none';
+        .contact-info p { 
+            margin-bottom: 25px; 
+            color: var(--text-muted); 
+            font-size: 0.95rem; 
+        }
+        
+        .contact-info a { 
+            color: #ffffff; 
+            transition: color 0.3s; 
+        }
+        
+        .contact-info a:hover { color: var(--text-muted); }
 
-  // afficher la vidéo
-  document.getElementById('large-video').style.display = 'block';
-  document.getElementById('videoPlayer').src = url + '?autoplay=1&rel=0';
+        .copyright { 
+            text-align: center; 
+            margin-top: 80px; 
+            color: #555; 
+            font-size: 0.8rem; 
+            letter-spacing: 1px;
+        }
 
-}
+        /* --- MODALE --- */
+        .modal-overlay {
+            display: none; 
+            position: fixed; 
+            inset: 0; 
+            z-index: 99999; 
+            background: rgba(6, 7, 10, 0.96);
+            backdrop-filter: blur(12px);
+            overflow-y: auto; 
+            padding: 40px 20px; 
+            opacity: 0; 
+            transition: opacity 0.3s ease; 
+        }
+        
+        .modal-overlay.active { display: block; opacity: 1; }
+        .modal-container { max-width: 1200px; margin: 0 auto; position: relative; }
+        
+        .modal-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 35px; 
+            border-bottom: 1px solid var(--border-subtle); 
+            padding-bottom: 20px; 
+        }
+        
+        .modal-title { font-size: 1.4rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; }
+        
+        .modal-close-btn { 
+            background: transparent; 
+            color: #fff; 
+            border: 1px solid var(--border-subtle); 
+            width: 42px; 
+            height: 42px; 
+            border-radius: 4px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1.1rem; 
+            cursor: pointer; 
+            transition: all 0.3s; 
+        }
+        
+        .modal-close-btn:hover { background: #ffffff; color: #000; }
 
-function backToGalleryVideos() {
-  document.getElementById('videoPlayer').src = '';
-  document.getElementById('large-video').style.display = 'none';
+        .photo-gallery-grid { column-count: 3; column-gap: 20px; width: 100%; }
+        .gallery-thumb-item {
+            break-inside: avoid; 
+            margin-bottom: 20px; 
+            position: relative; 
+            border-radius: 4px; 
+            overflow: hidden; 
+            cursor: pointer;
+            border: 1px solid var(--border-subtle); 
+            background-color: #12141c;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .gallery-thumb-item img { width: 100%; height: auto; display: block; object-fit: cover; transition: transform 0.5s; }
+        .gallery-thumb-item:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.3); }
+        .gallery-thumb-item:hover img { transform: scale(1.04); }
 
-  // réafficher miniatures et séparateur
-  document.getElementById('galleryVideos').style.display = 'block';
-  document.getElementById('galleryVideosLycee').style.display = 'block';
-  document.querySelector('.modal-separator').style.display = 'flex';
-}
+        .lightbox-view { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh; position: relative; }
+        
+        .lightbox-back-btn { 
+            align-self: flex-start; 
+            margin-bottom: 20px; 
+            background: transparent; 
+            border: 1px solid var(--border-subtle); 
+            color: #fff; 
+            padding: 10px 20px; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+            transition: all 0.3s; 
+        }
+        
+        .lightbox-back-btn:hover { background: rgba(255, 255, 255, 0.1); }
+        
+        .lightbox-media-wrapper { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; max-height: 75vh; }
+        
+        .lightbox-img-full { 
+            max-width: 90vw; 
+            max-height: 75vh; 
+            border-radius: 4px; 
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7); 
+            object-fit: contain; 
+            user-select: none; 
+        }
+        
+        .lightbox-arrow { 
+            position: absolute; 
+            top: 50%; 
+            transform: translateY(-50%); 
+            background: rgba(0, 0, 0, 0.6); 
+            color: #ffffff; 
+            border: 1px solid rgba(255, 255, 255, 0.15); 
+            width: 46px; 
+            height: 46px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1rem; 
+            cursor: pointer; 
+            z-index: 10; 
+            transition: background 0.3s; 
+        }
+        
+        .lightbox-arrow:hover { background: #ffffff; color: #000000; }
+        .lightbox-arrow.prev { left: 10px; }
+        .lightbox-arrow.next { right: 10px; }
+        .lightbox-counter { margin-top: 15px; color: var(--text-muted); font-size: 0.8rem; letter-spacing: 2px; }
 
-// clic en dehors = fermer
-window.addEventListener('click', function(e) {
-  if (e.target === document.getElementById('modalVideos')) {
-    closeModalVideos();
-  }
-});
-</script>
-<script>
-function openModalVideos2() {
-  document.getElementById('modalVideos2').style.display = 'flex';
-	document.body.classList.add('modal-open');
-}
+        .video-section-title { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; color: #fff; margin: 30px 0 15px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border-subtle); }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; }
+        .video-card { background: #12141c; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-subtle); }
+        .video-wrapper { position: relative; width: 100%; aspect-ratio: 16/9; }
+        .video-wrapper iframe { width: 100%; height: 100%; border: none; }
 
-function closeModalVideos2() {
-  document.getElementById('modalVideos2').style.display = 'none';
-  backToGalleryVideos2();
-	document.body.classList.remove('modal-open');
-}
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.4rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .navbar { padding: 15px 20px; display: flex; justify-content: space-between; }
+            .nav-brand { display: none; }
+            .nav-links { position: static; transform: none; gap: 20px; }
+            .card.span-6 { grid-column: span 12; aspect-ratio: 16/10; }
+            .photo-gallery-grid { column-count: 1; }
+            .video-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
 
-function showVideo2(url) {
-  document.getElementById('galleryVideos2Main').style.display = 'none';
-  document.getElementById('galleryVideos2Drone').style.display = 'none';
-  document.getElementById('galleryVideos2Game').style.display = 'none';
-  document.querySelectorAll('#modalVideos2 .modal-separator').forEach(el => el.style.display = 'none');
+    <!-- HERO SECTION AVEC PARALLAXE FIXE -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Gaspard Boissinot</h1>
+            <p class="hero-subtitle">Audiovisuel <span class="dot">&bull;</span> Réalisation <span class="dot">&bull;</span> Photographie</p>
+        </div>
+    </section>
 
-  document.getElementById('large-video2').style.display = 'block';
-  document.getElementById('videoPlayer2').src = url + '?autoplay=1&rel=0';
-}
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">Gaspard Boissinot</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Audiovisuel</a></li>
+            <li><a href="generic.html">À propos</a></li>
+            <li><a href="elements.html">Projets</a></li>
+        </ul>
+        <div class="nav-socials">
+            <a href="https://www.linkedin.com/in/gaspard-boissinot-57aab1403/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/@ormission" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/gaspard._b" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
 
-function backToGalleryVideos2() {
-  document.getElementById('videoPlayer2').src = '';
-  document.getElementById('large-video2').style.display = 'none';
+    <!-- GRILLE PORTFOLIO MODULAIRE SANS TROUS -->
+    <main class="container">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+            
+            <!-- 1. Courts-Métrages (Pleine largeur) -->
+            <div class="card span-12" onclick="openVideoModal('courts_metrages')">
+                <div class="card-inner">
+                    <img class="card-img" src="images/DÖD.png" alt="Courts-métrages" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Courts-Métrages</h3>
+                        <p class="card-subtitle">Projets cinématographiques & fictions</p>
+                        <span class="card-btn">Visionner <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
 
-  document.getElementById('galleryVideos2Main').style.display = 'block';
-  document.getElementById('galleryVideos2Drone').style.display = 'block';
-  document.getElementById('galleryVideos2Game').style.display = 'block';
-  document.querySelectorAll('#modalVideos2 .modal-separator').forEach(el => el.style.display = 'flex');
-}
+            <!-- 2. Portraits (Duo 50/50) -->
+            <div class="card span-6" onclick="openPhotoModal('portraits', 'Portraits')">
+                <div class="card-inner">
+                    <img class="card-img" src="images/portrait1.jpg" alt="Portraits" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Portraits</h3>
+                        <p class="card-subtitle">Série photographique humaine</p>
+                        <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
 
-// clic en dehors = fermer
-window.addEventListener('click', function(e) {
-  if (e.target === document.getElementById('modalVideos2')) {
-    closeModalVideos2();
-  }
-});
-</script>
-			<!-- Footer -->
-				<footer id="footer">
-					<section>
-						<form id="contact-form" action="https://formspree.io/f/mgolaapb" method="POST">
-							<div class="fields">
-								<div class="field">
-									<label for="name">Nom</label>
-									<input type="text" name="name" id="name" required />
-								</div>
-								<div class="field">
-									<label for="email">Adresse mail</label>
-									<input type="email" name="email" id="email" required />
-								</div>
-								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="3" required></textarea>
-								</div>
-							</div>
-							<ul class="actions">
-								<li><input type="submit" value="Envoyer un message" /></li>
-							</ul>
-							<input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio !" />
-							<input type="hidden" name="_captcha" value="false">
-						</form>
-					</section>
-					<section class="split contact">
-						<section class="alt">
-							<h3>Adresse</h3>
-							<p>Rue Pellart<br />
-							Roubaix, 59100 / Lieu d'études</p>
-						</section>
-						<section>
-							<h3>Téléphone</h3>
-							<p><a href="tel:+33624146473">+33 6 24 14 64 73</a></p>
-						</section>
-						<section>
-							<h3>Email</h3>
-							<p><a href="mailto:gaspboiss@gmail.com">gaspboiss@gmail.com</a></p>
-						</section>
-						<section>
-							<h3>Social</h3>
-							<ul class="icons alt">
-							<li><a href="https://www.linkedin.com/in/gaspard-boissinot-57aab1403/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="https://www.youtube.com/@ormission" target="_blank" class="icon brands fa-youtube"><span class="label">Youtube</span></a></li>
-						<li><a href="https://www.instagram.com/gaspard._b" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					</ul>
-							</ul>
-						</section>
-					</section>
-				</footer>
+            <!-- 3. Noir & Blanc (Duo 50/50) -->
+            <div class="card span-6" onclick="openPhotoModal('noir_et_blanc', 'Noir & Blanc')">
+                <div class="card-inner">
+                    <img class="card-img" src="images/rose.jpg" alt="Noir & Blanc" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Noir & Blanc</h3>
+                        <p class="card-subtitle">Contrastes & ombres</p>
+                        <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
 
-			<!-- Copyright -->
-				<div id="copyright">
-					<ul><li>&copy; Gaspard Boissinot</li></ul>
-				</div>
+            <!-- 4. Architecture (Duo 50/50) -->
+            <div class="card span-6" onclick="openPhotoModal('architecture', 'Architecture')">
+                <div class="card-inner">
+                    <img class="card-img" src="images/archi6.jpg" alt="Architecture" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Architecture</h3>
+                        <p class="card-subtitle">Perspectives & structures</p>
+                        <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
 
-		</div>
+            <!-- 5. Pose Longue (Duo 50/50) -->
+            <div class="card span-6" onclick="openPhotoModal('pose_longue', 'Pose Longue')">
+                <div class="card-inner">
+                    <img class="card-img" src="images/flou9.jpg" alt="Pose Longue" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Pose Longue</h3>
+                        <p class="card-subtitle">Mouvement & lumière</p>
+                        <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
 
-	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script>
-const form = document.getElementById("contact-form");
+            <!-- 6. Nature (Duo 50/50) -->
+            <div class="card span-6" onclick="openPhotoModal('nature', 'Nature')">
+                <div class="card-inner">
+                    <img class="card-img" src="images/nature1.jpg" alt="Nature" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Nature</h3>
+                        <p class="card-subtitle">Paysages & flore</p>
+                        <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
 
-if (form) {
-  form.addEventListener("submit", async function(e) {
-    e.preventDefault();
+            <!-- 7. Drone (Duo 50/50) -->
+            <div class="card span-6" onclick="openPhotoModal('drone', 'Prises de vues Drone')">
+                <div class="card-inner">
+                    <img class="card-img" src="images/hiver2.jpg" alt="Prises de vues drones" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Drone</h3>
+                        <p class="card-subtitle">Perspectives aériennes</p>
+                        <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
 
-    const data = new FormData(form);
+            <!-- 8. Montages Variés (Pleine largeur avec la bonne miniature YouTube zoomée) -->
+            <div class="card span-12" onclick="openVideoModal('montages_varies')">
+                <div class="card-inner">
+                    <img class="card-img cropped-thumbnail" src="https://img.youtube.com/vi/N5z96sImUpc/maxresdefault.jpg" alt="Montages variés - Balade équestre" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Montages Variés</h3>
+                        <p class="card-subtitle">Créations, clips drone & montages jeux vidéo</p>
+                        <span class="card-btn">Visionner <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
 
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
+        </div>
+    </main>
 
-    if (response.ok) {
-      alert("Message envoyé avec succès !");
-      form.reset();
-    } else {
-      alert("Une erreur est survenue. Réessaie.");
-    }
-  });
-}
-</script>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="contact-form">
+                <h3 style="margin-bottom: 25px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px;">Me Contacter</h3>
+                <form id="contact-form" action="https://formspree.io/f/mgolaapb" method="POST">
+                    <input type="text" name="name" placeholder="Votre nom" required />
+                    <input type="email" name="email" placeholder="Votre adresse email" required />
+                    <textarea name="message" rows="4" placeholder="Votre message..." required></textarea>
+                    <button type="submit" class="submit-btn">Envoyer</button>
+                    <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio !" />
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3 style="margin-bottom: 25px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px;">Coordonnées</h3>
+                <p><strong>Adresse :</strong><br>Rue Pellart, Roubaix 59100</p>
+                <p><strong>Téléphone :</strong><br><a href="tel:+33624146473">+33 6 24 14 64 73</a></p>
+                <p><strong>Email :</strong><br><a href="mailto:gaspboiss@gmail.com">gaspboiss@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; Gaspard Boissinot &mdash; Tous droits réservés
+        </div>
+    </footer>
 
+    <!-- MODALE -->
+    <div id="modal-overlay" class="modal-overlay" onclick="handleBackdropClick(event)">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Galerie</h3>
+                <button class="modal-close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        const photoGalleries = {
+            noir_et_blanc: ['images/rue.jpg', 'images/rose.jpg', 'images/noiretblanc.jpg', 'images/expo3.jpg', 'images/oiseaux.jpg', 'images/b&w1.jpg'],
+            drone: ['images/hiver2.jpg', 'images/hiver1.jpg', 'images/hiver3.jpg', 'images/hiver4.jpg', 'images/hiver5.jpg', 'images/hiver6.jpg', 'images/drone1.jpg', 'images/drone2.jpg', 'images/drone3.jpg'],
+            portraits: ['images/portrait1.jpg', 'images/portrait11.jpg', 'images/école3.jpg', 'images/portrait2.jpg', 'images/pompier2.jpg', 'images/portrait3.jpg', 'images/portrait13.jpg', 'images/portrait6.jpg', 'images/portrait7.jpg', 'images/portrait10.jpg', 'images/portrait4.jpg', 'images/portrait12.jpg', 'images/école.jpg', 'images/pompier1.jpg', 'images/portrait15.jpg', 'images/école2.jpg', 'images/portrait5.jpg', 'images/portrait14.jpg'],
+            architecture: ['images/archi1.jpg', 'images/archi5.jpg', 'images/chateau1.jpg', 'images/chateau2.jpg', 'images/archi4.jpg', 'images/archi3.jpg', 'images/archi2.jpg', 'images/batiment1.jpg', 'images/archi6.jpg', 'images/archi7.jpg', 'images/archi8.jpg', 'images/archi9.jpg'],
+            pose_longue: ['images/flou1.jpg', 'images/expo1.jpg', 'images/flou9.jpg', 'images/Voitnoire.jpg', 'images/flou7.jpg', 'images/expo2.jpg', 'images/flou3.jpg', 'images/flou10.jpg'],
+            nature: ['images/nature2.jpg', 'images/nature11.jpg', 'images/hiver7.jpg', 'images/nature8.jpg', 'images/ciel2.jpg', 'images/nature7.jpg', 'images/nature6.jpg', 'images/nature9.jpg', 'images/nature4.jpg', 'images/nature1.jpg', 'images/ciel1.jpg', 'images/nature3.jpg', 'images/nature5.jpg', 'images/nature10.jpg']
+        };
+
+        const videoGalleries = {
+            courts_metrages: {
+                title: "Courts-Métrages",
+                sections: [
+                    { heading: null, videos: ["https://www.youtube.com/embed/1Mja8tMPmmc", "https://www.youtube.com/embed/PgySILbVU0c", "https://www.youtube.com/embed/r1Cv7a5lTPU", "https://www.youtube.com/embed/Escy0MCVTmo"] },
+                    { heading: "Projets lycée", videos: ["https://www.youtube.com/embed/838EboJXgMQ", "https://www.youtube.com/embed/s9DObtl3CgE"] }
+                ]
+            },
+            montages_varies: {
+                title: "Montages Variés",
+                sections: [
+                    { heading: null, videos: ["https://www.youtube.com/embed/dMNVtVzXCAg"] },
+                    { heading: "Montages drone", videos: ["https://www.youtube.com/embed/1khe2eo4Kbc", "https://www.youtube.com/embed/N5z96sImUpc"] },
+                    { heading: "Montages jeux vidéo", videos: ["https://www.youtube.com/embed/Z0JBgfGNSEo", "https://www.youtube.com/embed/v4AnSb6EHak", "https://www.youtube.com/embed/yUJhlouEDs4"] }
+                ]
+            }
+        };
+
+        let currentActiveKey = null, currentPhotos = [], currentPhotoIndex = 0, isLightboxView = false, touchStartX = 0, touchEndX = 0;
+
+        function openPhotoModal(key, title) {
+            currentActiveKey = key; currentPhotos = photoGalleries[key] || [];
+            document.getElementById('modal-title').textContent = title;
+            isLightboxView = false; renderPhotoGrid(); showModal();
+        }
+
+        function renderPhotoGrid() {
+            const body = document.getElementById('modal-body');
+            let html = '<div class="photo-gallery-grid">';
+            currentPhotos.forEach((src, idx) => {
+                html += `<div class="gallery-thumb-item" onclick="openLightbox(${idx})"><img src="${src}" alt="Photo ${idx + 1}" loading="lazy" decoding="async"></div>`;
+            });
+            html += '</div>';
+            body.innerHTML = html;
+        }
+
+        function openLightbox(index) {
+            isLightboxView = true; currentPhotoIndex = index; renderLightbox();
+        }
+
+        function renderLightbox() {
+            const body = document.getElementById('modal-body');
+            const src = currentPhotos[currentPhotoIndex];
+            body.innerHTML = `
+                <div class="lightbox-view">
+                    <button class="lightbox-back-btn" onclick="backToGrid()">Retour à la galerie</button>
+                    <div class="lightbox-media-wrapper">
+                        <div class="lightbox-arrow prev" onclick="prevPhoto(event)"><i class="fas fa-chevron-left"></i></div>
+                        <img class="lightbox-img-full" src="${src}" alt="Grand format ${currentPhotoIndex + 1}" loading="lazy" decoding="async">
+                        <div class="lightbox-arrow next" onclick="nextPhoto(event)"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                    <div class="lightbox-counter">${currentPhotoIndex + 1} / ${currentPhotos.length}</div>
+                </div>
+            `;
+        }
+
+        function backToGrid() { isLightboxView = false; renderPhotoGrid(); }
+        function nextPhoto(e) { if(e) e.stopPropagation(); if(currentPhotos.length === 0) return; currentPhotoIndex = (currentPhotoIndex + 1) % currentPhotos.length; renderLightbox(); }
+        function prevPhoto(e) { if(e) e.stopPropagation(); if(currentPhotos.length === 0) return; currentPhotoIndex = (currentPhotoIndex - 1 + currentPhotos.length) % currentPhotos.length; renderLightbox(); }
+
+        function openVideoModal(key) {
+            const data = videoGalleries[key]; if(!data) return;
+            document.getElementById('modal-title').textContent = data.title;
+            const body = document.getElementById('modal-body');
+            let html = '';
+            data.sections.forEach(sec => {
+                if(sec.heading) html += `<h4 class="video-section-title">${sec.heading}</h4>`;
+                html += '<div class="video-grid">';
+                sec.videos.forEach(url => {
+                    html += `<div class="video-card"><div class="video-wrapper"><iframe src="${url}?rel=0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>`;
+                });
+                html += '</div>';
+            });
+            body.innerHTML = html; showModal();
+        }
+
+        function showModal() { document.getElementById('modal-overlay').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('modal-overlay').classList.remove('active'); document.body.style.overflow = 'auto'; document.getElementById('modal-body').innerHTML = ''; isLightboxView = false; }
+        function handleBackdropClick(e) { if(e.target.id === 'modal-overlay') closeModal(); }
+
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('modal-overlay');
+            if(!modal.classList.contains('active')) return;
+            if(e.key === 'Escape') closeModal();
+            if(isLightboxView) { if(e.key === 'ArrowRight') nextPhoto(); if(e.key === 'ArrowLeft') prevPhoto(); }
+        });
+
+        const modalEl = document.getElementById('modal-overlay');
+        modalEl.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        modalEl.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if(isLightboxView) { if(touchEndX < touchStartX - 40) nextPhoto(); if(touchEndX > touchStartX + 40) prevPhoto(); }
+        }, { passive: true });
+
+        const form = document.getElementById("contact-form");
+        if(form) {
+            form.addEventListener("submit", async function(e) {
+                e.preventDefault(); const data = new FormData(form);
+                const response = await fetch(form.action, { method: form.method, body: data, headers: { 'Accept': 'application/json' } });
+                if(response.ok) { alert("Votre message a été envoyé avec succès !"); form.reset(); }
+                else { alert("Une erreur est survenue lors de l'envoi."); }
+            });
+        }
+    </script>
 </body>
-
 </html>
-
