@@ -265,7 +265,7 @@
             text-transform: uppercase;
         }
 
-        /* Bouton dynamique avec entrée bounce et sortie fade out flou */
+        /* Bouton dynamique avec entrée bounce, flèche et sortie fade out flou */
         .card-btn-container {
             position: relative;
             display: inline-flex;
@@ -288,10 +288,18 @@
             font-weight: 600;
             padding: 10px 18px;
             border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             transition: color 0.3s ease;
         }
 
-        /* Fond blanc animé type "goutte d'eau" (apparition dynamique / disparition douce) */
+        .card-btn i {
+            font-size: 0.65rem;
+            transition: transform 0.3s ease;
+        }
+
+        /* Fond blanc animé type "goutte d'eau" */
         .card-btn-bg {
             position: absolute;
             inset: 0;
@@ -306,17 +314,16 @@
         .card:hover { 
             transform: translateY(-5px); 
             border-color: var(--border-hover); 
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15); /* Flou lumineux d'arrière-plan intensifié */
         }
         
         .card:hover .card-img { 
             transform: scale(1.08); 
-            filter: brightness(1) blur(2px);
+            filter: brightness(1); /* Pas de flou sur l'image */
         }
 
         .card:hover .cropped-thumbnail {
             transform: scale(1.28);
-            filter: blur(2px);
         }
         
         .card:hover .card-title { 
@@ -330,7 +337,7 @@
             filter: blur(0);
         }
 
-        /* Quand on quitte le bouton ou la carte : Fade out flou progressif */
+        /* Quand on quitte la carte : Fade out flou progressif */
         .card:not(:hover) .card-btn-container {
             opacity: 0;
             transform: translateY(6px);
@@ -345,6 +352,10 @@
 
         .card-btn-container:hover .card-btn {
             color: #000000;
+        }
+
+        .card-btn-container:hover .card-btn i {
+            transform: translateX(3px);
         }
 
         /* --- FOOTER MINIMALISTE --- */
@@ -476,9 +487,9 @@
             transition: transform 0.3s, border-color 0.3s;
         }
         
-        .gallery-thumb-item img { width: 100%; height: auto; display: block; object-fit: cover; transition: transform 0.5s, filter 0.5s; }
+        .gallery-thumb-item img { width: 100%; height: auto; display: block; object-fit: cover; transition: transform 0.5s; }
         .gallery-thumb-item:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.3); }
-        .gallery-thumb-item:hover img { transform: scale(1.04); filter: blur(2px); }
+        .gallery-thumb-item:hover img { transform: scale(1.04); }
 
         .lightbox-view { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh; position: relative; }
         
@@ -602,7 +613,7 @@
                         <p class="card-subtitle">Projets cinématographiques & fictions</p>
                         <div class="card-btn-container">
                             <div class="card-btn-bg"></div>
-                            <span class="card-btn">Visionner</span>
+                            <span class="card-btn">Visionner <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -617,7 +628,7 @@
                         <p class="card-subtitle">Série photographique humaine</p>
                         <div class="card-btn-container">
                             <div class="card-btn-bg"></div>
-                            <span class="card-btn">Voir la galerie</span>
+                            <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -632,7 +643,7 @@
                         <p class="card-subtitle">Jeux de contrastes & ombres</p>
                         <div class="card-btn-container">
                             <div class="card-btn-bg"></div>
-                            <span class="card-btn">Voir la galerie</span>
+                            <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -647,7 +658,7 @@
                         <p class="card-subtitle">Structures & Perspectives</p>
                         <div class="card-btn-container">
                             <div class="card-btn-bg"></div>
-                            <span class="card-btn">Voir la galerie</span>
+                            <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -662,7 +673,7 @@
                         <p class="card-subtitle">Mouvements sociaux, manifs & vie urbaine</p>
                         <div class="card-btn-container">
                             <div class="card-btn-bg"></div>
-                            <span class="card-btn">Voir la galerie</span>
+                            <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -677,7 +688,7 @@
                         <p class="card-subtitle">Mouvement & lumière</p>
                         <div class="card-btn-container">
                             <div class="card-btn-bg"></div>
-                            <span class="card-btn">Voir la galerie</span>
+                            <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -692,7 +703,7 @@
                         <p class="card-subtitle">Paysages, flore & vestiges</p>
                         <div class="card-btn-container">
                             <div class="card-btn-bg"></div>
-                            <span class="card-btn">Voir la galerie</span>
+                            <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -707,7 +718,7 @@
                         <p class="card-subtitle">Perspectives aériennes</p>
                         <div class="card-btn-container">
                             <div class="card-btn-bg"></div>
-                            <span class="card-btn">Voir la galerie</span>
+                            <span class="card-btn">Voir la galerie <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -722,7 +733,7 @@
                         <p class="card-subtitle">Créations, clips drone & montages jeux vidéo</p>
                         <div class="card-btn-container">
                             <div class="card-btn-bg"></div>
-                            <span class="card-btn">Visionner</span>
+                            <span class="card-btn">Visionner <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
