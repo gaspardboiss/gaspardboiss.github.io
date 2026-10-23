@@ -265,7 +265,7 @@
             text-transform: uppercase;
         }
 
-        /* Bouton dynamique englobant texte et effet bounce/goutte d'eau */
+        /* Bouton dynamique avec entrée bounce et sortie fade out flou */
         .card-btn-container {
             position: relative;
             display: inline-flex;
@@ -273,7 +273,7 @@
             margin-top: 14px;
             opacity: 0; 
             transform: translateY(10px);
-            transition: opacity 0.3s, transform 0.3s;
+            transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
             pointer-events: auto;
             width: max-content;
         }
@@ -291,7 +291,7 @@
             transition: color 0.3s ease;
         }
 
-        /* Fond blanc animé type "goutte d'eau" / bounce fluide */
+        /* Fond blanc animé type "goutte d'eau" (apparition dynamique / disparition douce) */
         .card-btn-bg {
             position: absolute;
             inset: 0;
@@ -306,12 +306,12 @@
         .card:hover { 
             transform: translateY(-5px); 
             border-color: var(--border-hover); 
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08); /* Flou lumineux d'arrière-plan */
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
         }
         
         .card:hover .card-img { 
             transform: scale(1.08); 
-            filter: brightness(1) blur(2px); /* Léger flou image dos */
+            filter: brightness(1) blur(2px);
         }
 
         .card:hover .cropped-thumbnail {
@@ -323,9 +323,19 @@
             transform: translateY(0); 
         }
         
+        /* Au survol de la carte : apparition normale */
         .card:hover .card-btn-container { 
             opacity: 1; 
-            transform: translateY(0); 
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        /* Quand on quitte le bouton ou la carte : Fade out flou progressif */
+        .card:not(:hover) .card-btn-container {
+            opacity: 0;
+            transform: translateY(6px);
+            filter: blur(4px);
+            transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
         }
 
         /* Déclenchement de la transition bounce/goutte d'eau au survol du bouton */
