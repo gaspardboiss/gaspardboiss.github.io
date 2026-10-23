@@ -265,7 +265,7 @@
             text-transform: uppercase;
         }
 
-        /* Bouton dynamique avec entrée bounce, flèche et sortie fade out flou */
+        /* Bouton dynamique : apparition en bounce, disparition en fade out flou linéaire */
         .card-btn-container {
             position: relative;
             display: inline-flex;
@@ -273,7 +273,9 @@
             margin-top: 14px;
             opacity: 0; 
             transform: translateY(10px);
-            transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+            filter: blur(4px);
+            /* Transition par défaut (pour la sortie : fade out flou sans bounce) */
+            transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
             pointer-events: auto;
             width: max-content;
         }
@@ -314,12 +316,12 @@
         .card:hover { 
             transform: translateY(-5px); 
             border-color: var(--border-hover); 
-            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15); /* Flou lumineux d'arrière-plan intensifié */
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15);
         }
         
         .card:hover .card-img { 
             transform: scale(1.08); 
-            filter: brightness(1); /* Pas de flou sur l'image */
+            filter: brightness(1);
         }
 
         .card:hover .cropped-thumbnail {
@@ -330,19 +332,22 @@
             transform: translateY(0); 
         }
         
-        /* Au survol de la carte : apparition normale */
+        /* Au survol de la carte : apparition avec effet bounce/ressort */
         .card:hover .card-btn-container { 
             opacity: 1; 
             transform: translateY(0);
             filter: blur(0);
+            transition: opacity 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                        transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                        filter 0.45s ease;
         }
 
-        /* Quand on quitte la carte : Fade out flou progressif */
+        /* Quand on quitte la carte : Sortie en fade out flou simple (sans bounce) */
         .card:not(:hover) .card-btn-container {
             opacity: 0;
-            transform: translateY(6px);
+            transform: translateY(8px);
             filter: blur(4px);
-            transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
         }
 
         /* Déclenchement de la transition bounce/goutte d'eau au survol du bouton */
