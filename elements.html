@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- CONSTANTES & DIRECTION ARTISTIQUE --- */
+        /* --- CONSTANTES & DIRECTION ARTISTIQUE (100% BLANC / GRIS) --- */
         :root {
             --bg-main: #090a0f;
             --bg-card: #12141c;
@@ -25,10 +25,9 @@
             --bg-nav: rgba(9, 10, 15, 0.85);
             --text-primary: #ffffff;
             --text-muted: #8c95a1;
-            --accent-blue: #3b82f6;
-            --accent-glow: rgba(59, 130, 246, 0.2);
+            --accent-glow: rgba(255, 255, 255, 0.08);
             --border-subtle: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(59, 130, 246, 0.5);
+            --border-hover: rgba(255, 255, 255, 0.35);
         }
 
         /* Désactivation du curseur natif */
@@ -58,12 +57,12 @@
             pointer-events: none;
         }
 
-        /* Effet néon interactif qui suit le curseur sur le quadrillage */
+        /* Halo lumineux resserré et précis autour du curseur */
         .cursor-light-glow {
             position: fixed;
             top: 0; left: 0;
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.03) 40%, transparent 70%);
+            width: 180px; height: 180px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 70%);
             transform: translate(-50%, -50%);
             z-index: -1;
             pointer-events: none;
@@ -71,8 +70,8 @@
         }
 
         body.hovered .cursor-light-glow {
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 75%);
+            width: 260px; height: 260px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 75%);
         }
 
         a { color: inherit; text-decoration: none; }
@@ -105,8 +104,8 @@
             transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
         }
         body.hovered .custom-cursor::before, body.hovered .custom-cursor::after {
-            background: var(--accent-blue);
-            box-shadow: 0 0 12px var(--accent-blue);
+            background: #ffffff;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
         }
 
         /* --- NAVBAR CENTRAGE ABSOLU --- */
@@ -226,7 +225,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             transform: translateX(-100%);
             transition: transform 0.6s ease;
         }
@@ -234,8 +233,8 @@
         .social-box:hover {
             transform: translateY(-5px);
             border-color: var(--border-hover);
-            background: linear-gradient(145deg, #12141c, #171a26);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px var(--accent-glow);
+            background: linear-gradient(145deg, #12141c, #181b24);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 15px rgba(255,255,255,0.05);
         }
 
         .social-box:hover::before {
@@ -251,7 +250,7 @@
 
         .social-box:hover i {
             transform: scale(1.15);
-            color: var(--accent-blue);
+            color: #ffffff;
         }
 
         .social-box h3 {
@@ -287,7 +286,7 @@
             position: absolute;
             bottom: -50px; right: -50px;
             width: 200px; height: 200px;
-            background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -303,7 +302,7 @@
         }
 
         .form-section h3 i, .info-section h3 i {
-            color: var(--accent-blue);
+            color: #ffffff;
             font-size: 1rem;
         }
 
@@ -328,9 +327,9 @@
         .contact-form input:focus, 
         .contact-form textarea:focus {
             outline: none;
-            border-color: var(--accent-blue);
-            background: #11141f;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+            border-color: #ffffff;
+            background: #141722;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
         }
 
         .submit-btn-wrapper {
@@ -357,10 +356,10 @@
         }
 
         .submit-btn:hover {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #2563eb 100%);
-            color: #ffffff;
+            background: #dcdcdc;
+            color: #000000;
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.15);
         }
 
         .info-section {
@@ -389,7 +388,7 @@
         }
 
         .info-item a:hover {
-            color: var(--accent-blue);
+            color: var(--text-muted);
         }
 
         /* --- FOOTER --- */
@@ -420,7 +419,7 @@
 </head>
 <body>
 
-    <!-- Halo néon lumineux qui suit le curseur sur le quadrillage -->
+    <!-- Halo lumineux resserré de fond blanc/gris -->
     <div class="cursor-light-glow" id="lightGlow"></div>
 
     <!-- Curseur Custom 0 Latence + Micro-Bounce à l'arrêt -->
@@ -467,7 +466,7 @@
             </a>
         </div>
 
-        <!-- Formulaire & Coordonnées Pimpés -->
+        <!-- Formulaire & Coordonnées -->
         <div class="contact-card-wrapper">
             <div class="form-section">
                 <h3><i class="fas fa-paper-plane"></i> Envoyer un message</h3>
@@ -518,18 +517,16 @@
         </div>
     </footer>
 
-    <!-- SCRIPT CURSEUR INSTANTANÉ + HALO NÉON + MICRO-BOUNCE -->
+    <!-- SCRIPT CURSEUR INSTANTANÉ + HALO LUMINEUX RESSERRÉ + MICRO-BOUNCE -->
     <script>
         const cursor = document.getElementById('cursor');
         const lightGlow = document.getElementById('lightGlow');
         let stopTimeout;
 
         document.addEventListener('mousemove', (e) => {
-            // Position instantanée de la croix (zéro latence)
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
 
-            // Position du halo lumineux néon de fond
             lightGlow.style.left = e.clientX + 'px';
             lightGlow.style.top = e.clientY + 'px';
 
