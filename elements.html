@@ -45,17 +45,34 @@
             position: relative;
         }
 
-        /* Grille cinématique subtile en arrière-plan */
+        /* Quadrillage de fond cinématique type studio */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
             background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
             background-size: 60px 60px;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* Effet néon interactif qui suit le curseur sur le quadrillage */
+        .cursor-light-glow {
+            position: fixed;
+            top: 0; left: 0;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.03) 40%, transparent 70%);
+            transform: translate(-50%, -50%);
             z-index: -1;
             pointer-events: none;
+            transition: width 0.3s, height 0.3s, background 0.3s;
+        }
+
+        body.hovered .cursor-light-glow {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 75%);
         }
 
         a { color: inherit; text-decoration: none; }
@@ -290,7 +307,6 @@
             font-size: 1rem;
         }
 
-        /* Style unique et stylé pour les champs de formulaire (effet minimaliste pro) */
         .input-group {
             position: relative;
             margin-bottom: 25px;
@@ -317,7 +333,6 @@
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
         }
 
-        /* Bouton d'envoi immersif */
         .submit-btn-wrapper {
             position: relative;
             display: inline-block;
@@ -348,7 +363,6 @@
             box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
         }
 
-        /* Section Coordonnées */
         .info-section {
             border-left: 1px solid var(--border-subtle);
             padding-left: 45px;
@@ -405,6 +419,9 @@
     </style>
 </head>
 <body>
+
+    <!-- Halo néon lumineux qui suit le curseur sur le quadrillage -->
+    <div class="cursor-light-glow" id="lightGlow"></div>
 
     <!-- Curseur Custom 0 Latence + Micro-Bounce à l'arrêt -->
     <div class="custom-cursor" id="cursor"></div>
@@ -501,14 +518,20 @@
         </div>
     </footer>
 
-    <!-- SCRIPT CURSEUR INSTANTANÉ + MICRO-BOUNCE À L'ARRÊT -->
+    <!-- SCRIPT CURSEUR INSTANTANÉ + HALO NÉON + MICRO-BOUNCE -->
     <script>
         const cursor = document.getElementById('cursor');
+        const lightGlow = document.getElementById('lightGlow');
         let stopTimeout;
 
         document.addEventListener('mousemove', (e) => {
+            // Position instantanée de la croix (zéro latence)
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
+
+            // Position du halo lumineux néon de fond
+            lightGlow.style.left = e.clientX + 'px';
+            lightGlow.style.top = e.clientY + 'px';
 
             cursor.style.transform = document.body.classList.contains('hovered') 
                 ? 'translate(-50%, -50%) rotate(45deg) scale(1.2)' 
