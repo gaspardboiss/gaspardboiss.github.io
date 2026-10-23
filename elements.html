@@ -21,11 +21,12 @@
         :root {
             --bg-main: #090a0f;
             --bg-card: #12141c;
-            --bg-input: #0e1017;
+            --bg-input: #0a0c10;
             --bg-nav: rgba(9, 10, 15, 0.85);
             --text-primary: #ffffff;
             --text-muted: #8c95a1;
-            --accent-glow: rgba(59, 130, 246, 0.15);
+            --accent-blue: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.2);
             --border-subtle: rgba(255, 255, 255, 0.08);
             --border-hover: rgba(59, 130, 246, 0.5);
         }
@@ -44,7 +45,7 @@
             position: relative;
         }
 
-        /* Fond subtil type grille de studio / post-prod */
+        /* Grille cinématique subtile en arrière-plan */
         body::before {
             content: '';
             position: fixed;
@@ -52,14 +53,14 @@
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-size: 60px 60px;
             z-index: -1;
             pointer-events: none;
         }
 
         a { color: inherit; text-decoration: none; }
 
-        /* --- CURSEUR CUSTOM 0 LATENCE (CROIX RÉALISATEUR) --- */
+        /* --- CURSEUR CUSTOM 0 LATENCE + MICRO-BOUNCE À L'ARRÊT --- */
         .custom-cursor {
             position: fixed;
             top: 0; left: 0;
@@ -67,14 +68,14 @@
             pointer-events: none;
             z-index: 999999;
             transform: translate(-50%, -50%);
-            /* Zéro latence : pas d'interpolation transition sur le déplacement */
+            transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .custom-cursor::before, .custom-cursor::after {
             content: '';
             position: absolute;
             background: #ffffff;
             box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-            transition: background 0.2s, box-shadow 0.2s, width 0.2s, height 0.2s;
+            transition: background 0.2s, box-shadow 0.2s;
         }
         .custom-cursor::before {
             top: 11px; left: 0; width: 24px; height: 2px;
@@ -84,11 +85,11 @@
         }
 
         body.hovered .custom-cursor {
-            transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
         }
         body.hovered .custom-cursor::before, body.hovered .custom-cursor::after {
-            background: #3b82f6;
-            box-shadow: 0 0 12px #3b82f6;
+            background: var(--accent-blue);
+            box-shadow: 0 0 12px var(--accent-blue);
         }
 
         /* --- NAVBAR CENTRAGE ABSOLU --- */
@@ -155,7 +156,7 @@
             transform: translateY(-2px); 
         }
 
-        /* --- CONTENEUR PRINCIPAL CONTACT --- */
+        /* --- SECTION CONTACT --- */
         .contact-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -168,12 +169,14 @@
         }
 
         .contact-title {
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             font-weight: 700;
             letter-spacing: 6px;
             text-transform: uppercase;
             margin-bottom: 14px;
-            color: #ffffff;
+            background: linear-gradient(135deg, #ffffff 40%, #8c95a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .contact-subtitle {
@@ -183,7 +186,7 @@
             text-transform: uppercase;
         }
 
-        /* --- RÉSEAUX SOCIAUX REDESIGNÉS --- */
+        /* --- RÉSEAUX SOCIAUX --- */
         .socials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -206,7 +209,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
             transform: translateX(-100%);
             transition: transform 0.6s ease;
         }
@@ -215,7 +218,7 @@
             transform: translateY(-5px);
             border-color: var(--border-hover);
             background: linear-gradient(145deg, #12141c, #171a26);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 15px var(--accent-glow);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px var(--accent-glow);
         }
 
         .social-box:hover::before {
@@ -231,7 +234,7 @@
 
         .social-box:hover i {
             transform: scale(1.15);
-            color: #3b82f6;
+            color: var(--accent-blue);
         }
 
         .social-box h3 {
@@ -248,99 +251,131 @@
             text-transform: uppercase;
         }
 
-        /* --- BLOC FORMULAIRE & COORDONNÉES HARMONISÉ --- */
+        /* --- BLOC FORMULAIRE & COORDONNÉES PIMPÉ --- */
         .contact-card-wrapper {
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
             border-radius: 12px;
-            padding: 55px;
+            padding: 60px;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 60px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
             position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -50px; right: -50px;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .form-section h3, .info-section h3 {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-subtle);
             color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        /* Champs de formulaire unifiés (couleur sombre harmonisée) */
+        .form-section h3 i, .info-section h3 i {
+            color: var(--accent-blue);
+            font-size: 1rem;
+        }
+
+        /* Style unique et stylé pour les champs de formulaire (effet minimaliste pro) */
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
         .contact-form input, 
         .contact-form textarea {
             width: 100%;
             background: var(--bg-input);
             border: 1px solid var(--border-subtle);
-            padding: 16px 20px;
+            padding: 18px 20px;
             color: #ffffff;
-            border-radius: 6px;
-            margin-bottom: 20px;
+            border-radius: 8px;
             font-family: inherit;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form input::placeholder, 
-        .contact-form textarea::placeholder {
-            color: var(--text-muted);
-            opacity: 0.7;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .contact-form input:focus, 
         .contact-form textarea:focus {
             outline: none;
-            border-color: #3b82f6;
-            background: #141722;
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+            border-color: var(--accent-blue);
+            background: #11141f;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+        }
+
+        /* Bouton d'envoi immersif */
+        .submit-btn-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin-top: 5px;
         }
 
         .submit-btn {
-            background: #ffffff;
+            width: 100%;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
             color: #000000;
             border: none;
-            padding: 15px 35px;
-            border-radius: 6px;
-            font-weight: 600;
+            padding: 18px;
+            border-radius: 8px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             cursor: none;
             font-size: 0.8rem;
-            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
         .submit-btn:hover {
-            background: #3b82f6;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #2563eb 100%);
             color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
         }
 
-        .info-section p {
-            margin-bottom: 22px;
+        /* Section Coordonnées */
+        .info-section {
+            border-left: 1px solid var(--border-subtle);
+            padding-left: 45px;
+        }
+
+        .info-item {
+            margin-bottom: 28px;
+        }
+
+        .info-item span {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.7;
+            margin-bottom: 6px;
         }
 
-        .info-section strong {
+        .info-item p, .info-item a {
+            font-size: 0.95rem;
             color: #ffffff;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .info-section a {
-            color: #ffffff;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
-        .info-section a:hover {
-            color: #3b82f6;
+        .info-item a:hover {
+            color: var(--accent-blue);
         }
 
         /* --- FOOTER --- */
@@ -359,9 +394,10 @@
         }
 
         /* Responsive Mobile */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .contact-card-wrapper { grid-template-columns: 1fr; padding: 30px; gap: 40px; }
+            .info-section { border-left: none; padding-left: 0; border-top: 1px solid var(--border-subtle); padding-top: 40px; }
             .socials-grid { grid-template-columns: 1fr; }
-            .contact-card-wrapper { grid-template-columns: 1fr; padding: 30px; }
             .navbar { padding: 15px 20px; }
             .nav-brand { display: none; }
             .nav-links { position: static; transform: none; gap: 20px; }
@@ -370,7 +406,7 @@
 </head>
 <body>
 
-    <!-- Curseur Custom 0 Latence -->
+    <!-- Curseur Custom 0 Latence + Micro-Bounce à l'arrêt -->
     <div class="custom-cursor" id="cursor"></div>
 
     <!-- NAVBAR -->
@@ -414,26 +450,46 @@
             </a>
         </div>
 
-        <!-- Formulaire & Coordonnées -->
+        <!-- Formulaire & Coordonnées Pimpés -->
         <div class="contact-card-wrapper">
             <div class="form-section">
-                <h3>Envoyer un message</h3>
-                <form id="contact-form" action="https://formspree.io/f/mgolaapb" method="POST">
-                    <input type="text" name="name" class="interactive" placeholder="Votre nom" required />
-                    <input type="email" name="email" class="interactive" placeholder="Votre adresse email" required />
-                    <textarea name="message" rows="5" class="interactive" placeholder="Votre message..." required></textarea>
-                    <button type="submit" class="submit-btn interactive">Envoyer</button>
+                <h3><i class="fas fa-paper-plane"></i> Envoyer un message</h3>
+                <form id="contact-form" class="contact-form" action="https://formspree.io/f/mgolaapb" method="POST">
+                    <div class="input-group">
+                        <input type="text" name="name" class="interactive" placeholder="Votre nom" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="email" class="interactive" placeholder="Votre adresse email" required />
+                    </div>
+                    <div class="input-group">
+                        <textarea name="message" rows="5" class="interactive" placeholder="Votre message..." required></textarea>
+                    </div>
+                    <div class="submit-btn-wrapper">
+                        <button type="submit" class="submit-btn interactive">Transmettre le message</button>
+                    </div>
                     <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio !" />
                     <input type="hidden" name="_captcha" value="false">
                 </form>
             </div>
             
             <div class="info-section">
-                <h3>Coordonnées</h3>
-                <p><strong>Adresse :</strong><br>Rue Pellart, Roubaix 59100</p>
-                <p><strong>Téléphone :</strong><br><a href="tel:+33624146473" class="interactive">+33 6 24 14 64 73</a></p>
-                <p><strong>Email :</strong><br><a href="mailto:gaspboiss@gmail.com" class="interactive">gaspboiss@gmail.com</a></p>
-                <p><strong>Disponibilité :</strong><br>Ouvert aux propositions de tournages, de montage, de drone et de projets créatifs.</p>
+                <h3><i class="fas fa-address-card"></i> Coordonnées</h3>
+                <div class="info-item">
+                    <span>Localisation</span>
+                    <p>Rue Pellart, Roubaix 59100</p>
+                </div>
+                <div class="info-item">
+                    <span>Téléphone</span>
+                    <p><a href="tel:+33624146473" class="interactive">+33 6 24 14 64 73</a></p>
+                </div>
+                <div class="info-item">
+                    <span>Email direct</span>
+                    <p><a href="mailto:gaspboiss@gmail.com" class="interactive">gaspboiss@gmail.com</a></p>
+                </div>
+                <div class="info-item">
+                    <span>Disponibilité</span>
+                    <p>Ouvert aux propositions de tournages, de montage, de drone et de projets créatifs.</p>
+                </div>
             </div>
         </div>
     </main>
@@ -445,24 +501,41 @@
         </div>
     </footer>
 
-    <!-- SCRIPT CURSEUR 0 LATENCE & FORMULAIRE -->
+    <!-- SCRIPT CURSEUR INSTANTANÉ + MICRO-BOUNCE À L'ARRÊT -->
     <script>
-        // Curseur instantané (zéro latence directe sur l'événement mousemove)
         const cursor = document.getElementById('cursor');
+        let stopTimeout;
 
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
+
+            cursor.style.transform = document.body.classList.contains('hovered') 
+                ? 'translate(-50%, -50%) rotate(45deg) scale(1.2)' 
+                : 'translate(-50%, -50%) scale(1)';
+
+            clearTimeout(stopTimeout);
+            stopTimeout = setTimeout(() => {
+                const baseTransform = document.body.classList.contains('hovered') 
+                    ? 'translate(-50%, -50%) rotate(45deg) scale(1.35)' 
+                    : 'translate(-50%, -50%) scale(1.25)';
+                
+                cursor.style.transform = baseTransform;
+
+                setTimeout(() => {
+                    cursor.style.transform = document.body.classList.contains('hovered') 
+                        ? 'translate(-50%, -50%) rotate(45deg) scale(1.2)' 
+                        : 'translate(-50%, -50%) scale(1)';
+                }, 120);
+            }, 80);
         });
 
-        // Gestion du hover sur les éléments interactifs
         const interactives = document.querySelectorAll('a, button, input, textarea, .interactive');
         interactives.forEach(el => {
             el.addEventListener('mouseenter', () => document.body.classList.add('hovered'));
             el.addEventListener('mouseleave', () => document.body.classList.remove('hovered'));
         });
 
-        // Formulaire asynchrone Formspree
         const form = document.getElementById("contact-form");
         if(form) {
             form.addEventListener("submit", async function(e) {
