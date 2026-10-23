@@ -203,7 +203,7 @@
             border-radius: 4px;
             overflow: hidden;
             cursor: pointer;
-            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s;
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s, box-shadow 0.4s;
         }
 
         .card.span-12 { grid-column: span 12; aspect-ratio: 16/9; }
@@ -265,68 +265,76 @@
             text-transform: uppercase;
         }
 
-        .card-btn-wrapper {
+        /* Bouton dynamique englobant texte et effet bounce/goutte d'eau */
+        .card-btn-container {
+            position: relative;
             display: inline-flex;
             align-items: center;
-            gap: 15px;
             margin-top: 14px;
             opacity: 0; 
             transform: translateY(10px);
             transition: opacity 0.3s, transform 0.3s;
             pointer-events: auto;
+            width: max-content;
         }
 
         .card-btn {
+            position: relative;
+            z-index: 2;
             font-size: 0.7rem; 
             text-transform: uppercase; 
             letter-spacing: 2px; 
             color: #ffffff; 
             font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 30px;
+            transition: color 0.3s ease;
         }
 
-        /* Troisième étape : petit bouton rond blanc arrondi qui apparaît au survol de la zone du bouton */
-        .card-action-circle {
-            width: 32px;
-            height: 32px;
+        /* Fond blanc animé type "goutte d'eau" / bounce fluide */
+        .card-btn-bg {
+            position: absolute;
+            inset: 0;
             background: #ffffff;
-            color: #000000;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            opacity: 0;
-            transform: scale(0.6);
-            transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 30px;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1;
         }
 
         .card:hover { 
             transform: translateY(-5px); 
             border-color: var(--border-hover); 
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08); /* Flou lumineux d'arrière-plan */
         }
         
         .card:hover .card-img { 
             transform: scale(1.08); 
-            filter: brightness(1) blur(3px); 
+            filter: brightness(1) blur(2px); /* Léger flou image dos */
         }
 
         .card:hover .cropped-thumbnail {
             transform: scale(1.28);
-            filter: blur(3px);
+            filter: blur(2px);
         }
         
         .card:hover .card-title { 
             transform: translateY(0); 
         }
         
-        .card:hover .card-btn-wrapper { 
+        .card:hover .card-btn-container { 
             opacity: 1; 
             transform: translateY(0); 
         }
 
-        .card-btn-wrapper:hover .card-action-circle {
-            opacity: 1;
-            transform: scale(1);
+        /* Déclenchement de la transition bounce/goutte d'eau au survol du bouton */
+        .card-btn-container:hover .card-btn-bg {
+            transform: scaleX(1);
+        }
+
+        .card-btn-container:hover .card-btn {
+            color: #000000;
         }
 
         /* --- FOOTER MINIMALISTE --- */
@@ -582,9 +590,9 @@
                     <div class="card-overlay">
                         <h3 class="card-title">Courts-Métrages</h3>
                         <p class="card-subtitle">Projets cinématographiques & fictions</p>
-                        <div class="card-btn-wrapper">
+                        <div class="card-btn-container">
+                            <div class="card-btn-bg"></div>
                             <span class="card-btn">Visionner</span>
-                            <span class="card-action-circle"><i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -597,9 +605,9 @@
                     <div class="card-overlay">
                         <h3 class="card-title">Portraits</h3>
                         <p class="card-subtitle">Série photographique humaine</p>
-                        <div class="card-btn-wrapper">
+                        <div class="card-btn-container">
+                            <div class="card-btn-bg"></div>
                             <span class="card-btn">Voir la galerie</span>
-                            <span class="card-action-circle"><i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -612,9 +620,9 @@
                     <div class="card-overlay">
                         <h3 class="card-title">Noir & Blanc</h3>
                         <p class="card-subtitle">Jeux de contrastes & ombres</p>
-                        <div class="card-btn-wrapper">
+                        <div class="card-btn-container">
+                            <div class="card-btn-bg"></div>
                             <span class="card-btn">Voir la galerie</span>
-                            <span class="card-action-circle"><i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -627,9 +635,9 @@
                     <div class="card-overlay">
                         <h3 class="card-title">Architecture</h3>
                         <p class="card-subtitle">Structures & Perspectives</p>
-                        <div class="card-btn-wrapper">
+                        <div class="card-btn-container">
+                            <div class="card-btn-bg"></div>
                             <span class="card-btn">Voir la galerie</span>
-                            <span class="card-action-circle"><i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -642,9 +650,9 @@
                     <div class="card-overlay">
                         <h3 class="card-title">Street & Reportage</h3>
                         <p class="card-subtitle">Mouvements sociaux, manifs & vie urbaine</p>
-                        <div class="card-btn-wrapper">
+                        <div class="card-btn-container">
+                            <div class="card-btn-bg"></div>
                             <span class="card-btn">Voir la galerie</span>
-                            <span class="card-action-circle"><i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -657,9 +665,9 @@
                     <div class="card-overlay">
                         <h3 class="card-title">Pose Longue</h3>
                         <p class="card-subtitle">Mouvement & lumière</p>
-                        <div class="card-btn-wrapper">
+                        <div class="card-btn-container">
+                            <div class="card-btn-bg"></div>
                             <span class="card-btn">Voir la galerie</span>
-                            <span class="card-action-circle"><i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -672,9 +680,9 @@
                     <div class="card-overlay">
                         <h3 class="card-title">Nature & Urbex</h3>
                         <p class="card-subtitle">Paysages, flore & vestiges</p>
-                        <div class="card-btn-wrapper">
+                        <div class="card-btn-container">
+                            <div class="card-btn-bg"></div>
                             <span class="card-btn">Voir la galerie</span>
-                            <span class="card-action-circle"><i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -687,9 +695,9 @@
                     <div class="card-overlay">
                         <h3 class="card-title">Drone</h3>
                         <p class="card-subtitle">Perspectives aériennes</p>
-                        <div class="card-btn-wrapper">
+                        <div class="card-btn-container">
+                            <div class="card-btn-bg"></div>
                             <span class="card-btn">Voir la galerie</span>
-                            <span class="card-action-circle"><i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
@@ -702,9 +710,9 @@
                     <div class="card-overlay">
                         <h3 class="card-title">Montages Variés</h3>
                         <p class="card-subtitle">Créations, clips drone & montages jeux vidéo</p>
-                        <div class="card-btn-wrapper">
+                        <div class="card-btn-container">
+                            <div class="card-btn-bg"></div>
                             <span class="card-btn">Visionner</span>
-                            <span class="card-action-circle"><i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
