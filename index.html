@@ -274,7 +274,6 @@
             opacity: 0; 
             transform: translateY(10px);
             filter: blur(4px);
-            /* Transition par défaut (pour la sortie : fade out flou sans bounce) */
             transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
             pointer-events: auto;
             width: max-content;
@@ -332,7 +331,6 @@
             transform: translateY(0); 
         }
         
-        /* Au survol de la carte : apparition avec effet bounce/ressort */
         .card:hover .card-btn-container { 
             opacity: 1; 
             transform: translateY(0);
@@ -342,7 +340,6 @@
                         filter 0.45s ease;
         }
 
-        /* Quand on quitte la carte : Sortie en fade out flou simple (sans bounce) */
         .card:not(:hover) .card-btn-container {
             opacity: 0;
             transform: translateY(8px);
@@ -350,7 +347,6 @@
             transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
         }
 
-        /* Déclenchement de la transition bounce/goutte d'eau au survol du bouton */
         .card-btn-container:hover .card-btn-bg {
             transform: scaleX(1);
         }
@@ -553,7 +549,8 @@
         .lightbox-arrow.next { right: 10px; }
         .lightbox-counter { margin-top: 15px; color: var(--text-muted); font-size: 0.8rem; letter-spacing: 2px; }
 
-        .video-section-title { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; color: #fff; margin: 30px 0 15px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border-subtle); }
+        .video-section-title, .photo-section-title { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; color: #fff; margin: 30px 0 15px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border-subtle); }
+        .video-section-title:first-child, .photo-section-title:first-child { margin-top: 0; }
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; }
         .video-card { background: #12141c; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-subtle); }
         .video-wrapper { position: relative; width: 100%; aspect-ratio: 16/9; }
@@ -565,9 +562,8 @@
             .hero-subtitle { font-size: 0.8rem; flex-direction: column; gap: 6px; letter-spacing: 3px; }
             .hero-subtitle .dot { display: none; }
             
-            /* Navbar mobile compacte et propre sur une ligne */
             .navbar { padding: 12px 16px; }
-            .nav-brand { display: none; } /* Cache le nom long pour libérer de la place */
+            .nav-brand { display: none; }
             .nav-links { 
                 position: static; 
                 transform: none; 
@@ -584,7 +580,6 @@
                 font-size: 0.95rem;
             }
 
-            /* Textes sur les images réduits sur mobile */
             .card-overlay { padding: 20px; }
             .card-title { font-size: 1.05rem; letter-spacing: 1px; }
             .card-subtitle { font-size: 0.65rem; letter-spacing: 1px; }
@@ -809,13 +804,50 @@
 
     <script>
         const photoGalleries = {
-            portraits: ['images/portrait1.jpg', 'images/portrait2.jpg', 'images/portrait3.jpg', 'images/portrait4.jpg', 'images/portrait5.jpg', 'images/portrait6.jpg', 'images/portrait7.jpg', 'images/portrait8.jpg', 'images/portrait9.jpg', 'images/portrait10.jpg', 'images/portrait11.jpg'],
-            nb: ['images/nb1.jpg', 'images/nb2.jpg', 'images/nb3.jpg', 'images/nb4.jpg'],
-            architecture: ['images/archi1.jpg', 'images/archi4.jpg', 'images/archi5.jpg', 'images/archi6.jpg', 'images/archi7.jpg', 'images/archi8.jpg'],
-            street_reportage: ['images/street1.jpg', 'images/street2.jpg', 'images/street3.jpg', 'images/street4.jpg'],
-            pose_longue: ['images/flou1.jpg','images/flou3.jpg', 'images/flou4.jpg', 'images/flou5.jpg', 'images/flou6.jpg', 'images/flou7.jpg', 'images/flou8.jpg'],
-            nature_urbex: ['images/nature1.jpg', 'images/nature2.jpg', 'images/nature3.jpg', 'images/nature4.jpg', 'images/nature5.jpg', 'images/nature6.jpg', 'images/nature7.jpg', 'images/nature8.jpg', 'images/nature9.jpg'],
-            drone: ['images/drone1.jpg', 'images/drone2.jpg', 'images/drone3.jpg', 'images/drone4.jpg', 'images/drone5.jpg', 'images/drone6.jpg', 'images/drone7.jpg', 'images/drone8.jpg']
+            portraits: {
+                title: "Portraits",
+                sections: [
+                    { heading: null, images: ['images/portrait1.jpg', 'images/portrait2.jpg', 'images/portrait3.jpg', 'images/portrait4.jpg', 'images/portrait5.jpg', 'images/portrait6.jpg', 'images/portrait7.jpg', 'images/portrait8.jpg', 'images/portrait9.jpg', 'images/portrait10.jpg', 'images/portrait11.jpg'] }
+                ]
+            },
+            nb: {
+                title: "Noir & Blanc",
+                sections: [
+                    { heading: null, images: ['images/nb1.jpg', 'images/nb2.jpg', 'images/nb3.jpg', 'images/nb4.jpg'] }
+                ]
+            },
+            architecture: {
+                title: "Architecture",
+                sections: [
+                    { heading: null, images: ['images/archi1.jpg', 'images/archi4.jpg', 'images/archi5.jpg', 'images/archi6.jpg', 'images/archi7.jpg', 'images/archi8.jpg'] }
+                ]
+            },
+            street_reportage: {
+                title: "Street & Reportage",
+                sections: [
+                    { heading: "Street", images: ['images/street1.jpg'] },
+                    { heading: "Mouvements sociaux / Reportage", images: ['images/street2.jpg', 'images/street3.jpg', 'images/street4.jpg'] }
+                ]
+            },
+            pose_longue: {
+                title: "Pose Longue",
+                sections: [
+                    { heading: null, images: ['images/flou1.jpg','images/flou3.jpg', 'images/flou4.jpg', 'images/flou5.jpg', 'images/flou6.jpg', 'images/flou7.jpg', 'images/flou8.jpg'] }
+                ]
+            },
+            nature_urbex: {
+                title: "Nature & Urbex",
+                sections: [
+                    { heading: "Nature", images: ['images/nature1.jpg', 'images/nature2.jpg', 'images/nature3.jpg', 'images/nature4.jpg', 'images/nature5.jpg', 'images/nature6.jpg', 'images/nature7.jpg', 'images/nature8.jpg'] },
+                    { heading: "Urbex", images: ['images/nature9.jpg'] }
+                ]
+            },
+            drone: {
+                title: "Prises de vues Drone",
+                sections: [
+                    { heading: null, images: ['images/drone1.jpg', 'images/drone2.jpg', 'images/drone3.jpg', 'images/drone4.jpg', 'images/drone5.jpg', 'images/drone6.jpg', 'images/drone7.jpg', 'images/drone8.jpg'] }
+                ]
+            }
         };
 
         const videoGalleries = {
@@ -836,21 +868,41 @@
             }
         };
 
-        let currentActiveKey = null, currentPhotos = [], currentPhotoIndex = 0, isLightboxView = false, touchStartX = 0, touchEndX = 0;
+        let currentActiveKey = null, flatPhotos = [], currentPhotoIndex = 0, isLightboxView = false, touchStartX = 0, touchEndX = 0;
 
         function openPhotoModal(key, title) {
-            currentActiveKey = key; currentPhotos = photoGalleries[key] || [];
+            currentActiveKey = key; 
+            const data = photoGalleries[key];
+            if(!data) return;
+            
+            // Aplatir la liste globale des images de toutes les sections pour la lightbox
+            flatPhotos = [];
+            data.sections.forEach(sec => {
+                sec.images.forEach(img => flatPhotos.push(img));
+            });
+
             document.getElementById('modal-title').textContent = title;
-            isLightboxView = false; renderPhotoGrid(); showModal();
+            isLightboxView = false; 
+            renderPhotoGrid(); 
+            showModal();
         }
 
         function renderPhotoGrid() {
             const body = document.getElementById('modal-body');
-            let html = '<div class="photo-gallery-grid">';
-            currentPhotos.forEach((src, idx) => {
-                html += `<div class="gallery-thumb-item" onclick="openLightbox(${idx})"><img src="${src}" alt="Photo ${idx + 1}" loading="lazy" decoding="async"></div>`;
+            const data = photoGalleries[currentActiveKey];
+            let html = '';
+            
+            let globalIndexCounter = 0;
+            data.sections.forEach(sec => {
+                if(sec.heading) html += `<h4 class="photo-section-title">${sec.heading}</h4>`;
+                html += '<div class="photo-gallery-grid">';
+                sec.images.forEach((src) => {
+                    const currentIndex = globalIndexCounter;
+                    html += `<div class="gallery-thumb-item" onclick="openLightbox(${currentIndex})"><img src="${src}" alt="Photo" loading="lazy" decoding="async"></div>`;
+                    globalIndexCounter++;
+                });
+                html += '</div>';
             });
-            html += '</div>';
             body.innerHTML = html;
         }
 
@@ -860,7 +912,7 @@
 
         function renderLightbox() {
             const body = document.getElementById('modal-body');
-            const src = currentPhotos[currentPhotoIndex];
+            const src = flatPhotos[currentPhotoIndex];
             body.innerHTML = `
                 <div class="lightbox-view">
                     <button class="lightbox-back-btn" onclick="backToGrid()">Retour à la galerie</button>
@@ -869,14 +921,14 @@
                         <img class="lightbox-img-full" src="${src}" alt="Grand format ${currentPhotoIndex + 1}" loading="lazy" decoding="async">
                         <div class="lightbox-arrow next" onclick="nextPhoto(event)"><i class="fas fa-chevron-right"></i></div>
                     </div>
-                    <div class="lightbox-counter">${currentPhotoIndex + 1} / ${currentPhotos.length}</div>
+                    <div class="lightbox-counter">${currentPhotoIndex + 1} / ${flatPhotos.length}</div>
                 </div>
             `;
         }
 
         function backToGrid() { isLightboxView = false; renderPhotoGrid(); }
-        function nextPhoto(e) { if(e) e.stopPropagation(); if(currentPhotos.length === 0) return; currentPhotoIndex = (currentPhotoIndex + 1) % currentPhotos.length; renderLightbox(); }
-        function prevPhoto(e) { if(e) e.stopPropagation(); if(currentPhotos.length === 0) return; currentPhotoIndex = (currentPhotoIndex - 1 + currentPhotos.length) % currentPhotos.length; renderLightbox(); }
+        function nextPhoto(e) { if(e) e.stopPropagation(); if(flatPhotos.length === 0) return; currentPhotoIndex = (currentPhotoIndex + 1) % flatPhotos.length; renderLightbox(); }
+        function prevPhoto(e) { if(e) e.stopPropagation(); if(flatPhotos.length === 0) return; currentPhotoIndex = (currentPhotoIndex - 1 + flatPhotos.length) % flatPhotos.length; renderLightbox(); }
 
         function openVideoModal(key) {
             const data = videoGalleries[key]; if(!data) return;
