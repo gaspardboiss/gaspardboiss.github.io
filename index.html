@@ -28,7 +28,7 @@
             --border-hover: rgba(255, 255, 255, 0.3);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+- { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
 
         body {
@@ -207,6 +207,19 @@
         }
 
         .card.span-12 { grid-column: span 12; aspect-ratio: 16/9; }
+        .card.card-dod {
+            grid-column: span 12;
+            aspect-ratio: auto;
+            width: fit-content;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .card.card-dod .card-img {
+            width: auto;
+            height: auto;
+            max-height: 75vh;
+            display: block;
+        }
         .card.span-6  { grid-column: span 6;  aspect-ratio: 16/10; }
 
         .card-inner {
@@ -628,7 +641,7 @@
         <div class="portfolio-grid">
             
             <!-- 1. Courts-Métrages (Pleine largeur - DÖD.jpg) -->
-            <div class="card span-12" onclick="openVideoModal('courts_metrages')">
+            <div class="card card-dod" onclick="openVideoModal('courts_metrages')">
                 <div class="card-inner">
                     <img class="card-img" src="images/DÖD.jpg" alt="Courts-métrages" loading="lazy" decoding="async">
                     <div class="card-overlay">
